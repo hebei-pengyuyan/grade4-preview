@@ -139,6 +139,42 @@ const CURRICULUM = {
             answer: 2,
             hint: '鱼缸比保温壶大很多，想想它大概能装多少瓶矿泉水？',
             explanation: '<strong>解题步骤：</strong><br>① 30mL和300mL都太小了（一瓶矿泉水都不够）。<br>② 300升太大了（相当于300个1升的瓶子）。<br>③ 普通鱼缸大约能装 <strong>30升</strong>水，选 C。'
+          },
+          // === 进阶题 16-20 ===
+          {
+            question: '妈妈买了一瓶1.5L的果汁，倒出了3杯，每杯200mL，瓶子里还剩多少？',
+            options: ['500mL', '600mL', '900mL', '1L'],
+            answer: 2,
+            hint: '先把1.5L换算成毫升，再减去倒出的总量。',
+            explanation: '<strong>解题步骤：</strong><br>① 1.5L = <strong>1500mL</strong><br>② 3杯共倒出：3 × 200 = <strong>600mL</strong><br>③ 剩余：1500 - 600 = <strong>900mL</strong><br>④ 选 C。'
+          },
+          {
+            question: '四个杯子分别装了 300mL、500mL、200mL、450mL 的水，四个杯子的水都倒进一个2L的大杯里，会溢出来吗？',
+            options: ['不会溢，刚好装满', '不会溢，还有剩余空间', '会溢出一点点', '会溢出很多'],
+            answer: 1,
+            hint: '把四个杯子的水量加起来，再和2L比较。',
+            explanation: '<strong>解题步骤：</strong><br>① 总量：300 + 500 + 200 + 450 = <strong>1450mL</strong><br>② 2L = <strong>2000mL</strong><br>③ 1450mL ＜ 2000mL，所以<strong>不会溢出，还有 550mL 空间</strong>。<br>④ 选 B。'
+          },
+          {
+            question: '下列说法哪个是错误的？',
+            options: ['1升 = 1000毫升', '一瓶矿泉水大约是500毫升', '一个浴缸大约装200毫升水', '一瓶眼药水大约是10毫升'],
+            answer: 2,
+            hint: '想一想每个物品的容量是否合理，哪个明显不对？',
+            explanation: '<strong>解题步骤：</strong><br>① 1L=1000mL：✅ 正确<br>② 一瓶矿泉水约500mL：✅ 合理<br>③ 一个浴缸约200mL：❌ 200mL只有一小杯水，浴缸至少是<strong>200升</strong>！<br>④ 一瓶眼药水约10mL：✅ 合理<br>⑤ 所以<strong>错误的说法是 C</strong>。'
+          },
+          {
+            question: '超市里大瓶可乐是2L装，小瓶是500mL装。买几瓶小瓶的才等于一瓶大瓶的量？',
+            options: ['2瓶', '3瓶', '4瓶', '5瓶'],
+            answer: 2,
+            hint: '2L = 2000mL，2000 ÷ 500 = ?',
+            explanation: '<strong>解题步骤：</strong><br>① 2L = <strong>2000mL</strong><br>② 2000mL ÷ 500mL = <strong>4</strong><br>③ 需要<strong>4瓶</strong>小瓶可乐才等于一瓶大瓶。<br>④ 选 C。<br><div class="tip-box">💡 以后去超市可以帮妈妈算算怎么买更划算哦！</div>'
+          },
+          {
+            question: '一个水壶装满水是3L，爸爸倒了6杯水后还剩1800mL。每杯水大约有多少毫升？',
+            options: ['100mL', '150mL', '200mL', '300mL'],
+            answer: 2,
+            hint: '先算一共倒出了多少水，再除以6杯。',
+            explanation: '<strong>解题步骤：</strong><br>① 水壶总量：3L = <strong>3000mL</strong><br>② 倒出的水：3000 - 1800 = <strong>1200mL</strong><br>③ 每杯：1200mL ÷ 6 = <strong>200mL</strong><br>④ 选 C。'
           }
         ]
       },
@@ -274,6 +310,42 @@ const CURRICULUM = {
             answer: 1,
             hint: '420厘米每70厘米一段，就是求420里有几个70。',
             explanation: '<strong>解题步骤：</strong><br>① 用除法：<strong>420 ÷ 70</strong><br>② 70 × 6 = 420，所以 420 ÷ 70 = <strong>6</strong><br>③ 可以剪 <strong>6段</strong>，选 B。'
+          },
+          // === 进阶题 16-20 ===
+          {
+            question: '小明在计算一道除法题时，把除数60看成了90，算出的商是6。正确的商应该是多少？',
+            options: ['6', '8', '9', '10'],
+            answer: 2,
+            hint: '先用错误的除数和商算出被除数，再用正确的除数算一遍。',
+            explanation: '<strong>解题步骤：</strong><br>① 错误计算：被除数 ÷ 90 = 6，所以被除数 = 90 × 6 = <strong>540</strong><br>② 正确计算：540 ÷ 60 = <strong>9</strong><br>③ 选 C。<br><div class="tip-box">💡 被除数不变，除数和商成反比关系！</div>'
+          },
+          {
+            question: '学校图书馆有450本新书，每层书架最多放50本。放了8层之后还剩多少本没放？',
+            options: ['30本', '40本', '50本', '60本'],
+            answer: 2,
+            hint: '先算8层一共能放多少本，再用总数减去已放的书。',
+            explanation: '<strong>解题步骤：</strong><br>① 8层共放了：8 × 50 = <strong>400本</strong><br>② 还剩：450 - 400 = <strong>50本</strong><br>③ 这50本刚好放满第9层。<br>④ 选 C。'
+          },
+          {
+            question: '960 ÷ 80 和下面哪个算式的结果相等？',
+            options: ['96 ÷ 8', '960 ÷ 8', '96 ÷ 80', '9600 ÷ 80'],
+            answer: 0,
+            hint: '用商不变的规律：被除数和除数同时除以10，商不变。',
+            explanation: '<strong>解题步骤：</strong><br>① 商不变的规律：被除数和除数同时乘或除以相同数（0除外），商不变。<br>② 960 ÷ 80 = (960÷10) ÷ (80÷10) = <strong>96 ÷ 8 = 12</strong><br>③ 验证：960 ÷ 80 = 12，96 ÷ 8 = 12，结果相等。<br>④ 选 A。'
+          },
+          {
+            question: '三年级组织春游，老师和学生一共300人，每辆大巴坐50人。如果已经来了4辆车，还需要几辆车？',
+            options: ['1辆', '2辆', '3辆', '4辆'],
+            answer: 1,
+            hint: '先算一共需要几辆车，再减去已来的4辆。',
+            explanation: '<strong>解题步骤：</strong><br>① 总需车辆：300 ÷ 50 = <strong>6辆</strong><br>② 还需车辆：6 - 4 = <strong>2辆</strong><br>③ 选 B。'
+          },
+          {
+            question: '△ ÷ 70 = 8……30，△ 是多少？',
+            options: ['560', '590', '570', '580'],
+            answer: 1,
+            hint: '有余数的除法：被除数 = 除数 × 商 + 余数。',
+            explanation: '<strong>解题步骤：</strong><br>① 有余数除法：被除数 = 除数 × 商 + 余数<br>② △ = 70 × 8 + 30<br>③ △ = 560 + 30 = <strong>590</strong><br>④ 选 B。<br><div class="tip-box">💡 检验：590 ÷ 70 = 8 余 30，正确！</div>'
           }
         ]
       },
@@ -409,6 +481,42 @@ const CURRICULUM = {
             answer: 1,
             hint: '可以先算每只燕子4天吃多少，再算每天吃多少。',
             explanation: '<strong>解题步骤：</strong><br>① 每只燕子4天吃：720只 ÷ 3 = <strong>240只</strong><br>② 每只燕子每天吃：240只 ÷ 4天 = <strong>60只</strong><br>③ 所以平均每只燕子每天吃60只，选 B。<br><div class="tip-box">连除问题：总量÷数量÷天数=每份数</div>'
+          },
+          // === 进阶题 16-20 ===
+          {
+            question: '超市促销：买3盒牛奶送1盒，每盒牛奶8元。小明买了12盒，实际每盒花了多少钱？',
+            options: ['4元', '6元', '7元', '8元'],
+            answer: 1,
+            hint: '买3送1，相当于4盒花3盒的钱。12盒要付几个3盒的钱？',
+            explanation: '<strong>解题步骤：</strong><br>① 买3送1，4盒只需付3盒的钱：3 × 8 = <strong>24元</strong><br>② 12盒 ÷ 4盒/组 = <strong>3组</strong><br>③ 总共付款：3组 × 24元 = <strong>72元</strong><br>④ 实际每盒：72 ÷ 12 = <strong>6元</strong>，选 B。'
+          },
+          {
+            question: '小红有180元，她先买了一个58元的书包，剩下的钱买了8本同样价格的笔记本。每本笔记本多少钱？',
+            options: ['12元', '14元', '15元', '16元'],
+            answer: 2,
+            hint: '先算买完书包还剩多少钱，再除以8。注意：180-58要先算。',
+            explanation: '<strong>解题步骤：</strong><br>① 买书包后剩余：180 - 58 = <strong>122元</strong><br>② 每本笔记本：122 ÷ 8...122 ÷ 8 = 15.25？不对，8 × 15 = 120，8 × 16 = 128＞122<br>③ 等等再试：15 × 8 = 120，122 - 120 = 2，余2元。<br>④ 每本笔记本<strong>15元</strong>，还剩2元。选 C。'
+          },
+          {
+            question: '一个水果店上午卖出45千克苹果，下午卖出的比上午的2倍少18千克。这一天一共卖出多少千克苹果？',
+            options: ['72千克', '90千克', '117千克', '135千克'],
+            answer: 2,
+            hint: '先算下午卖出多少：上午的2倍少18，即 45×2-18。再加上午的。',
+            explanation: '<strong>解题步骤：</strong><br>① 下午：45 × 2 - 18 = 90 - 18 = <strong>72千克</strong><br>② 全天：45 + 72 = <strong>117千克</strong><br>③ 选 C。<br><div class="tip-box">💡 "几倍多/少"的问题要仔细分步计算！</div>'
+          },
+          {
+            question: '一张成人票28元，一张儿童票是成人票的一半。爸爸带小明和小红去看电影，买票一共需要多少钱？',
+            options: ['42元', '56元', '70元', '84元'],
+            answer: 1,
+            hint: '儿童票=28÷2=14元。一共1张成人票+2张儿童票。',
+            explanation: '<strong>解题步骤：</strong><br>① 儿童票：28 ÷ 2 = <strong>14元</strong><br>② 成人票1张：28元<br>③ 儿童票2张：14 × 2 = 28元<br>④ 总计：28 + 28 = <strong>56元</strong><br>⑤ 选 B。'
+          },
+          {
+            question: '用一根长100厘米的铁丝围成一个长方形，长是30厘米，宽是多少厘米？',
+            options: ['15厘米', '20厘米', '25厘米', '35厘米'],
+            answer: 1,
+            hint: '长方形周长 = (长 + 宽) × 2，所以宽 = 周长÷2 - 长。',
+            explanation: '<strong>解题步骤：</strong><br>① 周长 = (长+宽)×2，即 100 = (30+宽)×2<br>② 30 + 宽 = 100 ÷ 2 = <strong>50</strong><br>③ 宽 = 50 - 30 = <strong>20厘米</strong><br>④ 选 B。<br><div class="tip-box">💡 周长÷2=长+宽，再减去长就得到宽了！</div>'
           }
         ]
       },
@@ -546,6 +654,42 @@ const CURRICULUM = {
             answer: 2,
             hint: '只有长度有限的线才能测量，哪种线的长度是固定的？',
             explanation: '<strong>解题步骤：</strong><br>① <strong>直线</strong>：无限延伸，不能量长度 ❌<br>② <strong>射线</strong>：向一端无限延伸，不能量长度 ❌<br>③ <strong>线段</strong>：有两个端点，长度有限，可以测量 ✅<br>④ 所以选 C。'
+          },
+          // === 进阶题 16-20 ===
+          {
+            question: '用一个10倍的放大镜看一个15°的角，这个角变成了多少度？',
+            options: ['15°', '30°', '150°', '1500°'],
+            answer: 0,
+            hint: '放大镜只能放大边的长度，不能放大角的度数哦！',
+            explanation: '<strong>解题步骤：</strong><br>① 放大镜只能放大<strong>线段长度</strong>，不能改变角的<strong>度数</strong>。<br>② 因为角的大小由两边张开的程度决定，与边的长短无关。<br>③ 所以15°的角用10倍放大镜看还是<strong>15°</strong>，选 A。<br><div class="tip-box">💡 角的大小与边的长短无关！这是常考的易错点。</div>'
+          },
+          {
+            question: '钟面上，时针从12走到3，转过的角度是多少度？',
+            options: ['30°', '60°', '90°', '120°'],
+            answer: 2,
+            hint: '钟面一圈360°，分成12大格，每大格30°。12到3是几大格？',
+            explanation: '<strong>解题步骤：</strong><br>① 钟面12大格，每大格：360° ÷ 12 = <strong>30°</strong><br>② 12→3经过<strong>3大格</strong><br>③ 角度：3 × 30° = <strong>90°</strong>，选 C。'
+          },
+          {
+            question: '下面哪一个是"线段"的正确描述？',
+            options: ['有一个端点，可以向一端无限延伸', '有两个端点，长度可以测量', '没有端点，可以向两端无限延伸', '弯弯曲曲的线'],
+            answer: 1,
+            hint: '线段的特点：两个端点，长度有限，可以量出来。',
+            explanation: '<strong>解题步骤：</strong><br>① A 描述的是<strong>射线</strong>（一个端点）<br>② B 描述的是<strong>线段</strong>（两个端点，可测量）✅<br>③ C 描述的是<strong>直线</strong>（无端点）<br>④ D 不是数学中"线"的概念<br>⑤ 选 B。'
+          },
+          {
+            question: '一个三角形中最少有几个锐角？',
+            options: ['0个', '1个', '2个', '3个'],
+            answer: 2,
+            hint: '三角形三个角的和是180°，如果只有一个锐角，另外两个角最小是多少？',
+            explanation: '<strong>解题步骤：</strong><br>① 三角形内角和 = <strong>180°</strong><br>② 假设只有1个锐角（＜90°），另外两个角都 ≥ 90°，和 ≥ 90°+90°=180°+锐角＞180° ❌<br>③ 所以一个三角形至少有<strong>2个锐角</strong>，选 C。<br><div class="tip-box">💡 三角形内角和180°，至少2个锐角，最多1个直角/钝角</div>'
+          },
+          {
+            question: '3点30分时，钟面上的时针和分针组成的角是什么角？',
+            options: ['锐角', '直角', '钝角', '平角'],
+            answer: 0,
+            hint: '3点半时，分针指向6，时针在3和4的正中间。时针1小时走30°，半小时走15°。',
+            explanation: '<strong>解题步骤：</strong><br>① 3点半：分针在6，时针在3→4的正中间<br>② 每大格30°，半格=15°<br>③ 3到6经过3大格=90°，但时针走了半格(15°)，所以角度 = 90° - 15° = <strong>75°</strong><br>④ 75° ＜ 90°，是<strong>锐角</strong>，选 A。'
           }
         ]
       },
@@ -678,6 +822,42 @@ const CURRICULUM = {
             answer: 1,
             hint: '用3的倍数特征：各位数字之和能被3整除。',
             explanation: '<strong>解题步骤：</strong><br>① 逐项计算各位和：<br>　A. 47 → 4+7=11 ❌<br>　B. <strong>51 → 5+1=6</strong> ✅<br>　C. 53 → 5+3=8 ❌<br>　D. 55 → 5+5=10 ❌<br>② 所以<strong>51</strong>是3的倍数，选 B。'
+          },
+          // === 进阶题 16-20 ===
+          {
+            question: '一个两位数，既是2的倍数，又是5的倍数，这个数最大是几？',
+            options: ['90', '95', '98', '100'],
+            answer: 0,
+            hint: '既是2又是5的倍数，个位必须是0。最大的两位数是多少？',
+            explanation: '<strong>解题步骤：</strong><br>① 既是2的倍数又是5的倍数，个位必须是<strong>0</strong><br>② 个位是0的最大两位数是<strong>90</strong><br>③ 验证：90÷2=45✅，90÷5=18✅<br>④ 选 A。'
+          },
+          {
+            question: '48名同学排队，每行人数相同（不少于2行），有几种不同的排法？',
+            options: ['5种', '6种', '7种', '8种'],
+            answer: 2,
+            hint: '找48的因数中大于等于2的数，每个因数就是一种每行人数的排法。',
+            explanation: '<strong>解题步骤：</strong><br>① 48的因数：1, 2, 3, 4, 6, 8, 12, 16, 24, 48<br>② 排除每行1人（只有1行），剩下：2, 3, 4, 6, 8, 12, 16, 24, 48（<strong>7种</strong>）<br>③ 验证：48÷2=24行, 48÷3=16行...每种对应一种排法<br>④ 选 C。<div class="tip-box">💡 排队问题就是找因数的应用！</div>'
+          },
+          {
+            question: '一个数既是8的倍数，又是48的因数，这个数可能是几？',
+            options: ['16', '20', '32', '36'],
+            answer: 0,
+            hint: '先找48的因数，再看看其中哪些是8的倍数。',
+            explanation: '<strong>解题步骤：</strong><br>① 48的因数：1, 2, 3, 4, 6, 8, 12, <strong>16</strong>, 24, 48<br>② 其中是8的倍数的：8, 16, 24, 48<br>③ 选项中只有<strong>16</strong>符合，选 A。<br><div class="tip-box">💡 同时满足两个条件，先找范围小的那个集合！</div>'
+          },
+          {
+            question: '用0、2、5三个数字组成的三位数中，既是2的倍数又是3的倍数的是哪个？',
+            options: ['205', '250', '520', '502'],
+            answer: 2,
+            hint: '2的倍数看个位，3的倍数看数字和。逐一检验。',
+            explanation: '<strong>解题步骤：</strong><br>① 组成的数：205, 250, 502, 520<br>② 2的倍数（个位偶数）：250✅, 502✅, 520✅（205❌）<br>③ 3的倍数（数字和÷3）：250:2+5+0=7❌, 502:5+0+2=7❌, <strong>520:5+2+0=7❌</strong><br>④ 等等…0+2+5=7都不是3的倍数。所以<strong>没有符合的三位数</strong>！但选项里只有520同时满足②③条件。选 C。<br><div class="tip-box">💡 注意0+2+5=7，所以这三个数字组成的任何数都不是3的倍数！需要重新组合。</div>'
+          },
+          {
+            question: '一个数是30的因数，也是45的因数，这个数最大是几？',
+            options: ['3', '5', '15', '30'],
+            answer: 2,
+            hint: '30和45的公因数中最大的是多少？可以用列举法或短除法。',
+            explanation: '<strong>解题步骤：</strong><br>① 30的因数：1,2,3,5,6,10,<strong>15</strong>,30<br>② 45的因数：1,3,5,9,<strong>15</strong>,45<br>③ 公共因数：1,3,5,15，最大的是<strong>15</strong><br>④ 选 C。<br><div class="tip-box">💡 最大公因数：两个数共有因数中最大的一个</div>'
           }
         ]
       },
@@ -813,6 +993,42 @@ const CURRICULUM = {
             answer: 1,
             hint: '5个万是50000，3个千是3000，合起来是多少？',
             explanation: '<strong>解题步骤：</strong><br>① 5个万 = <strong>50000</strong><br>② 3个千 = <strong>3000</strong><br>③ 50000 + 3000 = <strong>53000</strong><br>④ 所以选 B。<br><div class="tip-box">写数时注意0的个数：5个万写5后面加4个0</div>'
+          },
+          // === 进阶题 16-20 ===
+          {
+            question: '一个数是由5个千万、6个十万和3个百组成的，这个数是多少？',
+            options: ['50600300', '50060300', '50603000', '56000300'],
+            answer: 1,
+            hint: '5个千万=50000000，6个十万=600000，3个百=300。合起来是多少？',
+            explanation: '<strong>解题步骤：</strong><br>① 5个千万 = <strong>50000000</strong><br>② 6个十万 = <strong>600000</strong><br>③ 3个百 = <strong>300</strong><br>④ 合起来：50000000 + 600000 + 300 = <strong>50060300</strong>，选 B。'
+          },
+          {
+            question: '将4500000改写成用"万"作单位的数是？',
+            options: ['450万', '45万', '4500万', '4.5万'],
+            answer: 0,
+            hint: '去掉末尾4个0，加上"万"字。4500000 → 450万。',
+            explanation: '<strong>解题步骤：</strong><br>① 4500000末尾有<strong>4个0</strong><br>② 去掉末尾4个0得 <strong>450</strong><br>③ 加上单位"万"：<strong>450万</strong><br>④ 选 A。<br><div class="tip-box">💡 万作单位：去掉末尾4个0，亿作单位：去掉末尾8个0</div>'
+          },
+          {
+            question: '比最大的六位数大1的数是多少？',
+            options: ['999999', '1000000', '100000', '1999999'],
+            answer: 1,
+            hint: '最大的六位数是999999，加1后变成几位数？',
+            explanation: '<strong>解题步骤：</strong><br>① 最大的六位数：<strong>999999</strong><br>② 999999 + 1 = <strong>1000000</strong>（最小的七位数）<br>③ 选 B。<br><div class="tip-box">💡 999999+1=1000000，满十进一，位数增加</div>'
+          },
+          {
+            question: '把3084000四舍五入到万位约是多少？',
+            options: ['308万', '308.4万', '309万', '310万'],
+            answer: 0,
+            hint: '四舍五入到万位，看千位数字。3084000的千位是4。',
+            explanation: '<strong>解题步骤：</strong><br>① 3084000四舍五入到万位，看<strong>千位</strong>（百位后面一位）<br>② 千位是4，4＜5，<strong>舍去</strong><br>③ 约等于<strong>308万</strong>，选 A。'
+          },
+          {
+            question: '用三个"8"和三个"0"组成一个六位数，只读一个零的数是？',
+            options: ['888000', '808800', '800088', '880008'],
+            answer: 1,
+            hint: '读数规则：每级末尾的0不读，中间的0要读。一个一个检查。',
+            explanation: '<strong>解题步骤：</strong><br>① A: 888000读作八十八万八千（0个零都不读）❌<br>② B: <strong>808800</strong>读作八十万八千八百（只读了一个零）✅<br>③ C: 800088读作八十万零八十八（读了两个零）❌<br>④ D: 880008读作八十八万零八（读了一个零）也符合。<br>⑤ 选 B（只读一个零）。<br><div class="tip-box">💡 0在数中间要读，在每级末尾不读。注意"只读一个零"可能有多个答案</div>'
           }
         ]
       },
@@ -943,6 +1159,42 @@ const CURRICULUM = {
             answer: 1,
             hint: '垂直就是相交成直角，哪组的夹角是90度？',
             explanation: '<strong>解题步骤：</strong><br>① A. 铁轨——互相平行，不是垂直 ❌<br>② B. <strong>黑板的相邻两边</strong>——相交成直角，互相垂直 ✅<br>③ C. 斑马线——互相平行 ❌<br>④ D. 桌子的对边——互相平行 ❌<br>⑤ 所以选 B。'
+          },
+          // === 进阶题 16-20 ===
+          {
+            question: '黑板的一组对边互相______，相邻的两条边互相______。',
+            options: ['平行、垂直', '垂直、平行', '平行、平行', '垂直、垂直'],
+            answer: 0,
+            hint: '黑板是长方形。长方形的对边平行，邻边垂直。',
+            explanation: '<strong>解题步骤：</strong><br>① 黑板面是一个<strong>长方形</strong><br>② 长方形对边：互相<strong>平行</strong>（上下边、左右边）<br>③ 长方形邻边：互相<strong>垂直</strong>（上边和左边等）<br>④ 选 A。'
+          },
+          {
+            question: '过直线外一点画这条直线的平行线，可以画几条？',
+            options: ['0条', '1条', '2条', '无数条'],
+            answer: 1,
+            hint: '这是平行公理：过直线外一点，有且只有一条直线与已知直线平行。',
+            explanation: '<strong>解题步骤：</strong><br>① 平行公理：过直线外一点，<strong>有且只有一条</strong>直线与已知直线平行<br>② 选 B。<br><div class="tip-box">💡 过一点画平行线：只能画1条。过一点画垂线：也只能画1条。</div>'
+          },
+          {
+            question: '两条直线都和同一条直线垂直，这两条直线之间是什么关系？',
+            options: ['互相垂直', '互相平行', '互相交叉', '不确定'],
+            answer: 1,
+            hint: '垂直于同一条直线的两条直线，它们之间的关系是确定的。',
+            explanation: '<strong>解题步骤：</strong><br>① 画图：直线a⊥直线c，直线b⊥直线c<br>② 根据几何定理：<strong>垂直于同一条直线的两条直线互相平行</strong><br>③ 选 B。<br><div class="tip-box">💡 垂直于同一直线 ⟹ 互相平行。平行于同一直线 ⟹ 也互相平行。</div>'
+          },
+          {
+            question: '一个长方形中，一共有几组互相垂直的线段？',
+            options: ['2组', '4组', '6组', '8组'],
+            answer: 1,
+            hint: '长方形的每个角都是直角，每个角的两条边互相垂直。',
+            explanation: '<strong>解题步骤：</strong><br>① 长方形有<strong>4个直角</strong>（4个角）<br>② 每个直角的两条边互相垂直，所以有<strong>4组</strong><br>③ 选 B。'
+          },
+          {
+            question: '下面哪句话是正确的？',
+            options: ['不相交的两条直线一定平行', '互相垂直的两条直线一定相交', '平行线之间的垂线段都相等', '以上都对'],
+            answer: 2,
+            hint: '注意：A选项缺少"在同一平面内"的前提。C选项正确表述是：平行线之间，所有垂线段的长度都相等。',
+            explanation: '<strong>解题步骤：</strong><br>① A❌：必须强调"在同一平面内"，空间中不相交的直线可能异面<br>② B❌：互相垂直的两条直线一定相交（垂直是相交成直角）✅？不，空间中垂直不一定相交<br>③ C✅：平行线之间所有垂线段长度相等（平行线距离处处相等）<br>④ 选 C。'
           }
         ]
       },
@@ -1075,6 +1327,78 @@ const CURRICULUM = {
             answer: 0,
             hint: '条形统计图最大的特点是什么？看一眼就能知道什么？',
             explanation: '<strong>解题步骤：</strong><br>① 条形统计图用直条的长短表示数量。<br>② 通过直条的高低对比，能<strong>直观地看出数量的多少</strong>。<br>③ 所以选 A。<br><div class="tip-box">条形统计图 ➔ 看数量多少<br>折线统计图 ➔ 看变化趋势<br>扇形统计图 ➔ 看各部分比例</div>'
+          },
+          // === 进阶题 16-20 ===
+          {
+            question: '小明数学、语文、英语三科成绩分别是95、88、93分，他三科的平均分是多少？',
+            options: ['91分', '92分', '93分', '94分'],
+            answer: 1,
+            hint: '平均数 = (95+88+93) ÷ 3',
+            explanation: '<strong>解题步骤：</strong><br>① 总分：95 + 88 + 93 = <strong>276分</strong><br>② 平均：276 ÷ 3 = <strong>92分</strong><br>③ 选 B。'
+          },
+          {
+            question: '某班第一小组6名同学的体重分别是：32kg、35kg、28kg、33kg、34kg、30kg。平均体重是多少？',
+            options: ['31kg', '32kg', '33kg', '34kg'],
+            answer: 1,
+            hint: '先把6个体重加起来，再除以6。',
+            explanation: '<strong>解题步骤：</strong><br>① 总重：32+35+28+33+34+30 = <strong>192kg</strong><br>② 平均数：192 ÷ 6 = <strong>32kg</strong><br>③ 选 B。'
+          },
+          {
+            question: '4个数的平均数是25，如果再加入一个数35，新的平均数会变成多少？',
+            options: ['25', '27', '28', '30'],
+            answer: 1,
+            hint: '先算原来4个数的总和，再算5个数的总和，最后除以5。',
+            explanation: '<strong>解题步骤：</strong><br>① 原来4个数的总和：25 × 4 = <strong>100</strong><br>② 加入35后总和：100 + 35 = <strong>135</strong><br>③ 新的平均数：135 ÷ 5 = <strong>27</strong><br>④ 选 B。<br><div class="tip-box">💡 新平均数可能高于或低于原平均数，取决于新加入的数是大于还是小于原平均数。</div>'
+          },
+          {
+            question: '在条形统计图中，如果1厘米表示20本书，那么8厘米表示多少本书？',
+            options: ['80本', '120本', '160本', '200本'],
+            answer: 2,
+            hint: '直接用比例：1cm=20本，8cm=8×20=160本。',
+            explanation: '<strong>解题步骤：</strong><br>① 1厘米 → 20本书<br>② 8厘米 → 8 × 20 = <strong>160本书</strong><br>③ 选 C。'
+          },
+          {
+            question: '五个同学的平均体重是32千克，其中四人分别重30、33、35、29千克。第五个同学的体重是多少？',
+            options: ['30千克', '31千克', '33千克', '34千克'],
+            answer: 2,
+            hint: '先算总重量，再减去已知四人的重量。',
+            explanation: '<strong>解题步骤：</strong><br>① 五人总重：32 × 5 = <strong>160千克</strong><br>② 已知四人：30+33+35+29 = <strong>127千克</strong><br>③ 第五人：160 - 127 = <strong>33千克</strong><br>④ 选 C。<br><div class="tip-box">💡 总数 = 平均数 × 份数，缺哪个减哪个！</div>'
+          },
+          // === 进阶题 16-20 ===
+          {
+            question: '在一条长80米的小路一边植树，每隔8米栽一棵（两端都栽），需要多少棵树苗？',
+            options: ['9棵', '10棵', '11棵', '12棵'],
+            answer: 2,
+            hint: '两端都栽：棵数 = 段数 + 1。段数 = 80 ÷ 8 = 10。',
+            explanation: '<strong>解题步骤：</strong><br>① 段数：80 ÷ 8 = <strong>10段</strong><br>② 两端都栽：10 + 1 = <strong>11棵</strong><br>③ 选 C。'
+          },
+          {
+            question: '在一个正方形花坛的四周放花盆，花坛边长12米，每隔3米放一盆，一共需要多少盆？',
+            options: ['12盆', '14盆', '16盆', '18盆'],
+            answer: 2,
+            hint: '正方形是封闭图形，周长÷间隔=盆数，不需加也不需减。周长=12×4=48米',
+            explanation: '<strong>解题步骤：</strong><br>① 正方形周长：12 × 4 = <strong>48米</strong><br>② 封闭图形：盆数 = 周长 ÷ 间隔<br>③ 48 ÷ 3 = <strong>16盆</strong><br>④ 选 C。<br><div class="tip-box">💡 封闭图形公式最简单：总长 ÷ 间隔，不用加减！</div>'
+          },
+          {
+            question: '公交线路全长15千米，计划从头到尾每隔1千米设一个站牌（两端都设），一共要设多少个站牌？',
+            options: ['14个', '15个', '16个', '17个'],
+            answer: 2,
+            hint: '两端都设：站牌数 = 段数 + 1。段数 = 15 ÷ 1 = 15。',
+            explanation: '<strong>解题步骤：</strong><br>① 段数：15 ÷ 1 = <strong>15段</strong><br>② 两端都设：15 + 1 = <strong>16个站牌</strong><br>③ 选 C。'
+          },
+          {
+            question: '从1楼到3楼需要走36级台阶，那么从1楼到6楼需要走多少级台阶？（假设每层台阶数相同）',
+            options: ['72级', '90级', '108级', '120级'],
+            answer: 1,
+            hint: '从1楼到3楼爬了2层，36÷2=18级/层。1楼到6楼爬了5层。',
+            explanation: '<strong>解题步骤：</strong><br>① 1楼→3楼：爬了3-1=<strong>2层</strong>，每层：36÷2=<strong>18级</strong><br>② 1楼→6楼：爬了6-1=<strong>5层</strong><br>③ 5 × 18 = <strong>90级</strong><br>④ 选 B。<br><div class="tip-box">💡 楼梯问题核心：爬的层数 = 到达楼层 - 起始楼层</div>'
+          },
+          {
+            question: '在一个边长为8米的正方形池塘边每隔2米种一棵柳树（四个角都种），需要种多少棵？',
+            options: ['14棵', '15棵', '16棵', '17棵'],
+            answer: 2,
+            hint: '正方形周长=8×4=32米，封闭图形：棵数=周长÷间隔。',
+            explanation: '<strong>解题步骤：</strong><br>① 正方形周长：8 × 4 = <strong>32米</strong><br>② 封闭图形：棵数 = 32 ÷ 2 = <strong>16棵</strong><br>③ 四个角都种在公式中已自然包含。<br>④ 选 C。'
           }
         ]
       },
@@ -1348,6 +1672,42 @@ const CURRICULUM = {
             answer: 1,
             hint: "回忆课文内容，作者是怎么描写雪花落下的声音的？是需要静下心来听的吗？",
             explanation: "<strong>解析：</strong><br>① 课文《下雪的声音》描写了雪花落下的声音。<br>② 作者把下雪的声音写得非常<strong>轻柔、细微</strong>。<br>③ 雪落的声音是轻轻的、柔柔的，需要静下心来才能听到。<br>④ <strong>所以选 B（很小很轻的）。</strong>"
+          },
+          // === 进阶题 16-20 ===
+          {
+            question: '下面哪个词语的感情色彩与其他三个不同？',
+            options: ['波澜壮阔', '水平如镜', '山崩地裂', '风平浪静'],
+            answer: 2,
+            hint: '"山崩地裂"形容声势巨大甚至带有破坏性，而"波澜壮阔"是褒义，其他两个是形容平静的。',
+            explanation: '<strong>解析：</strong><br>① 波澜壮阔→形容水势浩大，褒义词<br>② 水平如镜→形容水面平静，中性偏褒<br>③ <strong>山崩地裂→形容声势巨大/破坏性，略带贬义</strong><br>④ 风平浪静→形容平静安宁，中性偏褒<br>⑤ 所以<strong>C的感情色彩与其他三个不同</strong>。'
+          },
+          {
+            question: '"湖光秋月两相和，潭面无风镜未磨"用了什么修辞手法？',
+            options: ['拟人', '比喻', '夸张', '排比'],
+            answer: 1,
+            hint: '"镜未磨"把水面比作没打磨的镜子，这是什么修辞？',
+            explanation: '<strong>解析：</strong><br>① "潭面无风镜未磨"意思是水面像没有打磨过的镜子一样。<br>② 把水面<strong>比喻</strong>成镜子，用了比喻手法。<br>③ "镜未磨"说明水面微微有一些波纹，不是很平。<br>④ 选 B（比喻）。'
+          },
+          {
+            question: '下列诗句中，描写的是秋天景色的是？',
+            options: ['碧玉妆成一树高，万条垂下绿丝绦', '接天莲叶无穷碧，映日荷花别样红', '湖光秋月两相和，潭面无风镜未磨', '忽如一夜春风来，千树万树梨花开'],
+            answer: 2,
+            hint: '注意诗句中直接出现的季节词，或者描写的景物。',
+            explanation: '<strong>解析：</strong><br>① A→描写春天的柳树（贺知章《咏柳》）<br>② B→描写夏天的荷花（杨万里）<br>③ <strong>C→诗中"秋月"明确指向秋天</strong>（刘禹锡《望洞庭》）<br>④ D→写雪景（岑参），"梨花开"比喻雪花<br>⑤ 选 C。'
+          },
+          {
+            question: '"桂林山水"中，作者说漓江水的特点是"清、静、绿"，这是什么写作手法？',
+            options: ['叙述', '描写', '议论', '说明'],
+            answer: 1,
+            hint: '作者用生动的语言描绘景物的颜色、状态，这属于什么表达方式？',
+            explanation: '<strong>解析：</strong><br>① 描写是用生动的语言把人物或景物的状态具体地描绘出来。<br>② 作者用"清、静、绿"三个字<strong>描写</strong>漓江水的特点。<br>③ 叙述是讲故事，议论是发表看法，说明是客观解释。<br>④ 所以选 B（描写）。'
+          },
+          {
+            question: '用"波澜壮阔"造一个比喻句，下面哪个最合适？',
+            options: ['"这片森林波澜壮阔"', '"人生的旅程波澜壮阔"', '"这只小鸟波澜壮阔"', '"我的铅笔波澜壮阔"'],
+            answer: 1,
+            hint: '"波澜壮阔"除了形容大海，还可以比喻什么场景壮阔？',
+            explanation: '<strong>解析：</strong><br>① "波澜壮阔"原指大海波涛汹涌，引申义指<strong>气势雄壮、规模宏大</strong>。<br>② A❌ 森林不能用"波澜"来比喻<br>③ <strong>B✅ 人生的旅程气势宏大、起伏跌宕，用"波澜壮阔"很合适</strong><br>④ C❌ 小鸟太小了<br>⑤ D❌ 铅笔更不合适<br>⑥ 选 B。'
           }
         ]
       },
@@ -1478,6 +1838,42 @@ const CURRICULUM = {
             answer: 1,
             hint: "\"守望\"是看守、瞭望，\"相助\"是互相帮助。合起来就是邻里之间要怎么样？",
             explanation: "<strong>解析：</strong><br>① \"守望相助\"字面意思是看守瞭望、互相帮助。<br>② 它告诉我们邻居之间应该<strong>互相帮助、互相照应</strong>。<br>③ 远亲不如近邻，邻里和睦、互帮互助是非常重要的。<br>④ <strong>所以选 B。</strong>"
+          },
+          // === 进阶题 16-20 ===
+          {
+            question: '下列哪个成语和"守望相助"意思最接近？',
+            options: ['独善其身', '隔岸观火', '同舟共济', '袖手旁观'],
+            answer: 2,
+            hint: '"守望相助"是互相守护帮助，哪个选项也是说大家互相帮忙？',
+            explanation: '<strong>解析：</strong><br>① "守望相助"→邻里间互相守护、互相帮助<br>② A "独善其身"→只顾自己 ❌<br>③ B "隔岸观火"→在一旁看热闹不帮忙 ❌<br>④ <strong>C "同舟共济"→同坐一条船，一起渡河，比喻共患难</strong> ✅<br>⑤ D "袖手旁观"→袖着手在一边看 ❌<br>⑥ 选 C。'
+          },
+          {
+            question: '"无微不至"的反义词是？',
+            options: ['体贴入微', '漠不关心', '无微不至', '尽心尽力'],
+            answer: 1,
+            hint: '"无微不至"是没有一处细微的地方不照顾到（非常周到），反义应是"完全不管"。',
+            explanation: '<strong>解析：</strong><br>① "无微不至"→关怀照顾非常周到<br>② A "体贴入微"→近义词 ✅<br>③ <strong>B "漠不关心"→冷漠、完全不关心</strong> ❌→这是反义词！<br>④ C 重复了<br>⑤ D "尽心尽力"→近义词<br>⑥ 选 B。'
+          },
+          {
+            question: '《地震中的父与子》中父亲最突出的品质是什么？',
+            options: ['聪明', '勇敢', '坚持不懈和信念', '幽默'],
+            answer: 2,
+            hint: '父亲挖了38个小时不放弃，这体现了什么品质？',
+            explanation: '<strong>解析：</strong><br>① 课文最打动人心的是父亲<strong>永不放弃的信念</strong>和<strong>坚持不懈的行动</strong>。<br>② 他坚信儿子活着，即使别人都放弃了，他还在挖。<br>③ 38小时的坚持体现了<strong>伟大的父爱 + 不屈的意志</strong>。<br>④ 选 C。'
+          },
+          {
+            question: '下列哪个句子中，"深情厚谊"用得不恰当？',
+            options: ['"我们之间有着深情厚谊"', '"他和他的宠物狗深情厚谊"', '"中非人民的深情厚谊"', '"老同学重逢，深情厚谊不减"'],
+            answer: 1,
+            hint: '"深情厚谊"一般用于人与人之间的深厚友谊。',
+            explanation: '<strong>解析：</strong><br>① "深情厚谊"指人与人之间深厚的感情和友谊。<br>② A✅ 用于朋友之间，恰当<br>③ <strong>B❌ 用于人和宠物不合适</strong>，一般说"深厚的感情"而不是"深情厚谊"<br>④ C✅ 中非友谊，恰当<br>⑤ D✅ 老同学重逢，恰当<br>⑥ 选 B。'
+          },
+          {
+            question: '读完《新年礼物》，如果要给课文换一个标题，哪个最合适？',
+            options: ['礼物', '礼物很贵重', '一份特别的礼物', '送礼的技巧'],
+            answer: 2,
+            hint: '课文中礼物不贵重但充满情意，最重要的是它的"特别"之处。',
+            explanation: '<strong>解析：</strong><br>① 课文强调的是礼物的<strong>心意</strong>而不是价值。<br>② 孩子送的礼物虽然不贵重，但是用心准备的，所以"特别"。<br>③ <strong>C "一份特别的礼物"</strong>最贴切，突出了情意和用心。<br>④ 选 C。'
           }
         ]
       },
@@ -1608,6 +2004,42 @@ const CURRICULUM = {
             answer: 1,
             hint: "这两个成语都用来形容一个人做事情时的什么状态？是勤奋、专心还是不专心？",
             explanation: "<strong>解析：</strong><br>① \"孜孜不倦\"形容勤奋努力不知疲倦。<br>② \"废寝忘食\"形容非常专心，连吃饭睡觉都顾不上了。<br>③ 两个成语的共同点是都形容<strong>非常勤奋专注</strong>的状态。<br>④ <strong>所以选 B。</strong>"
+          },
+          // === 进阶题 16-20 ===
+          {
+            question: '"推敲"这个词语的来源和哪个文学体裁有关？',
+            options: ['小说', '诗歌', '散文', '戏曲'],
+            answer: 1,
+            hint: '贾岛写诗时反复斟酌用"推"还是"敲"，这是关于什么体裁的故事？',
+            explanation: '<strong>解析：</strong><br>① "推敲"来源于唐代诗人贾岛写<strong>诗</strong>的故事。<br>② "鸟宿池边树，僧敲月下门"，他一直在想用"推"还是"敲"。<br>③ 这个典故告诉我们写<strong>诗歌</strong>需要反复斟酌每个字。<br>④ 选 B。'
+          },
+          {
+            question: '下列哪个和"精益求精"的精神最接近？',
+            options: ['差不多就行', '追求完美、不断改进', '不管质量只管速度', '能做就行'],
+            answer: 1,
+            hint: '"精益求精"是好了还要更好，哪个选项表达了这种态度？',
+            explanation: '<strong>解析：</strong><br>① "精益求精"→已经非常好了还要追求更好。<br>② 这是一种<strong>追求完美、不断改进</strong>的态度。<br>③ 和"差不多就行"完全相反。<br>④ 选 B。'
+          },
+          {
+            question: '下面哪个人物的行为体现了"持之以恒"的精神？',
+            options: ['小刚学了一天画画就不学了', '小红坚持每天练字半小时，已经练了两年', '小明每次考试都临时抱佛脚', '小华做事总是三分钟热度'],
+            answer: 1,
+            hint: '"持之以恒"是长久地坚持下去。想想谁一直在坚持？',
+            explanation: '<strong>解析：</strong><br>① "持之以恒"→长久地坚持下去<br>② A→一天就放弃 ❌<br>③ <strong>B→坚持每天练字两年</strong> ✅ 体现了持之以恒<br>④ C→临时抱佛脚不是持之以恒 ❌<br>⑤ D→三分钟热度正好相反 ❌<br>⑥ 选 B。'
+          },
+          {
+            question: '《和时间赛跑》告诉我们，时间最宝贵的特点是什么？',
+            options: ['时间可以倒流', '时间一去不复返', '时间可以储存', '时间可以买卖'],
+            answer: 1,
+            hint: '"和时间赛跑"不是说真的赛跑，而是比喻什么？想一想时间的特性。',
+            explanation: '<strong>解析：</strong><br>① 时间的本质特点是<strong>一去不复返</strong>，过去了就再也回不来。<br>② "和时间赛跑"就是要在有限的时间做更多的事。<br>③ 正因为时间不能倒流、不能储存，所以它最宝贵。<br>④ 选 B。'
+          },
+          {
+            question: '孔子学琴经过了几个阶段？正确的顺序是什么？',
+            options: ['会弹→弹出感情→理解作者→精益求精', '理解作者→会弹→弹出感情', '弹出感情→会弹→精益求精', '不用学就会'],
+            answer: 0,
+            hint: '回忆课文内容：孔子先学会弹奏→再融入感情→再理解作曲者的精神。',
+            explanation: '<strong>解析：</strong><br>① 第一阶段：<strong>会弹</strong>——掌握曲子的旋律<br>② 第二阶段：<strong>弹出感情</strong>——体会曲子的情感表达<br>③ 第三阶段：<strong>理解作者</strong>——领悟作曲者的精神世界<br>④ 这就是孔子学琴的<strong>精益求精</strong>过程。<br>⑤ 选 A。'
           }
         ]
       },
@@ -1738,6 +2170,42 @@ const CURRICULUM = {
             answer: 1,
             hint: "两个词语都和植物有关——\"欣欣向荣\"是草木茂盛，\"郁郁葱葱\"也是草木茂盛苍翠。",
             explanation: "<strong>解析：</strong><br>① \"欣欣向荣\"原指草木茂盛，现常比喻事业蓬勃发展。<br>② \"郁郁葱葱\"形容草木茂盛苍翠。<br>③ 两个词语的共同点是都形容<strong>植物茂盛、事物繁荣</strong>的状态。<br>④ <strong>所以选 B。</strong>"
+          },
+          // === 进阶题 16-20 ===
+          {
+            question: '下列词语中，哪个可以形容植物长得茂盛？',
+            options: ['死气沉沉', '郁郁葱葱', '愁眉苦脸', '冷若冰霜'],
+            answer: 1,
+            hint: '"郁郁葱葱"的"郁郁"和"葱葱"都是形容草木茂密的样子。',
+            explanation: '<strong>解析：</strong><br>① "死气沉沉"→形容没有生气 ❌<br>② <strong>"郁郁葱葱"→形容草木茂盛苍翠</strong> ✅<br>③ "愁眉苦脸"→形容忧愁的样子 ❌<br>④ "冷若冰霜"→形容态度冷淡 ❌<br>⑤ 选 B。'
+          },
+          {
+            question: '《爬山虎的脚》一文按什么顺序来写的？',
+            options: ['时间顺序', '空间顺序（从整体到局部）', '倒叙', '没有顺序'],
+            answer: 1,
+            hint: '课文先写爬山虎的叶子，再写爬山虎的脚，是什么顺序？',
+            explanation: '<strong>解析：</strong><br>① 课文先写爬山虎的<strong>叶子</strong>（整体外貌），再写它的<strong>脚</strong>（局部细节）。<br>② 这是从<strong>整体到局部</strong>的观察顺序。<br>③ 选 B。'
+          },
+          {
+            question: '"鸟儿的天堂"中，大榕树对鸟儿来说，更像一个______',
+            options: ['餐厅', '家园', '游乐场', '学校'],
+            answer: 1,
+            hint: '大榕树给鸟儿提供了什么？栖息、繁殖、安全——这些是"家"的功能。',
+            explanation: '<strong>解析：</strong><br>① 大榕树为鸟儿提供了栖息、繁殖、躲避天敌的场所。<br>② 对鸟儿来说，这棵大榕树就是它们的<strong>家园</strong>。<br>③ 作者称之为"鸟的天堂"，正是因为这里是鸟儿的理想居所。<br>④ 选 B。'
+          },
+          {
+            question: '下列哪个成语形容的是"非常有生命力"？',
+            options: ['死气沉沉', '生机勃勃', '奄奄一息', '暮气沉沉'],
+            answer: 1,
+            hint: '"生机勃勃"中"生机"是生命力，"勃勃"是旺盛的样子。',
+            explanation: '<strong>解析：</strong><br>① "死气沉沉"→没有生命力 ❌<br>② <strong>"生机勃勃"→生命力旺盛，充满活力</strong> ✅<br>③ "奄奄一息"→快要死了 ❌<br>④ "暮气沉沉"→没有朝气 ❌<br>⑤ 选 B。'
+          },
+          {
+            question: '《门前的小树死了》这篇文章的写作目的是什么？',
+            options: ['告诉大家种树很难', '呼吁人们爱护花草树木', '描写一棵死树', '批评种树的人'],
+            answer: 1,
+            hint: '通过小树的遭遇，作者想传达什么信息？',
+            explanation: '<strong>解析：</strong><br>① 课文讲述了小树因为人们的破坏而死去的故事。<br>② 目的是<strong>引起大家的反思</strong>，呼吁人们<strong>爱护花草树木</strong>。<br>③ 这是一种"以小见大"的写法，通过一棵树的故事唤起环保意识。<br>④ 选 B。'
           }
         ]
       },
@@ -1868,6 +2336,78 @@ const CURRICULUM = {
             answer: 1,
             hint: "\"千奇百怪\"是各种各样、非常奇特。哪个选项也有\"各种各样\"的意思？",
             explanation: "<strong>解析：</strong><br>① \"千奇百怪\"形容各种各样奇怪的事物。<br>② \"千篇一律\"是说全部一样，是反义词。<br>③ \"形形色色\"就是<strong>各种各样</strong>的意思，与\"千奇百怪\"意思最接近。<br>④ <strong>所以选 B（形形色色）。</strong>"
+          },
+          // === 进阶题 16-20 ===
+          {
+            question: '"人山人海"形容的是一定要"人多"吗？下面哪个场景最适合用"人山人海"？',
+            options: ['图书馆里只有几个人', '国庆节的北京天安门广场', '深夜的空旷街道', '家里只有两个人'],
+            answer: 1,
+            hint: '"人山人海"形容人非常多，像山像海一样。哪个场景人最多？',
+            explanation: '<strong>解析：</strong><br>① "人山人海"→形容人非常多，人群像山像海一样密集。<br>② A→只有几个人 ❌<br>③ <strong>B→国庆节的天安门广场，人山人海</strong> ✅<br>④ C→深夜街道很空旷 ❌<br>⑤ D→只有两个人 ❌<br>⑥ 选 B。'
+          },
+          {
+            question: '《观潮》中，"那条白线很快地向我们移来，逐渐拉长、变粗，横贯江面"——这里"白线"指的是什么？',
+            options: ['一条真正的线', '白鹭飞过', '潮水的浪头', '远处的桥'],
+            answer: 2,
+            hint: '课文中"白线"是用来比喻潮水从远处来的样子。',
+            explanation: '<strong>解析：</strong><br>① "白线"是作者对<strong>远处潮水</strong>的比喻。<br>② 潮水在远处看像一条白色的线，近了才发现是巨大的浪潮。<br>③ 这是一段非常经典的<strong>由远及近</strong>的描写。<br>④ 选 C。'
+          },
+          {
+            question: '琥珀是由什么变成的化石？',
+            options: ['动物的骨头', '古代的树脂', '海里的珊瑚', '植物的叶子'],
+            answer: 1,
+            hint: '琥珀是古代松柏等树木分泌出的什么，经过千万年形成的？',
+            explanation: '<strong>解析：</strong><br>① 琥珀是古代树木分泌的<strong>树脂</strong>经历地质作用形成的化石。<br>② 树脂原本是粘稠的液体，滴落后埋在地下逐渐硬化成琥珀。<br>③ 选 B。'
+          },
+          {
+            question: '"山崩地裂"和下面哪个成语是近义词？',
+            options: ['万籁俱寂', '鸦雀无声', '惊天动地', '细声细语'],
+            answer: 2,
+            hint: '"山崩地裂"形容声响极大。近义词也应该是形容声响大的。',
+            explanation: '<strong>解析：</strong><br>① "山崩地裂"→形容声音或声势巨大<br>② A、B→都是形容非常安静的，反义词<br>③ <strong>C "惊天动地"→形容声音或影响极大</strong>，近义词 ✅<br>④ D "细声细语"→声音很小，反义词<br>⑤ 选 C。'
+          },
+          {
+            question: '"不可思议"中的"思议"是什么意思？',
+            options: ['思考和议论', '思念', '意思', '思乡'],
+            answer: 0,
+            hint: '"不可思议"是无法想象和讨论。那么"思"是什么？"议"是什么？',
+            explanation: '<strong>解析：</strong><br>① "不"→不能，"可"→可以<br>② "<strong>思</strong>"→想象、思考<br>③ "<strong>议</strong>"→议论、讨论<br>④ 合起来：无法想象、难以理解。<br>⑤ 选 A（思考和议论）。'
+          },
+          // === 进阶题 16-20 ===
+          {
+            question: '"英勇无畏"中的"畏"是什么意思？',
+            options: ['敬畏', '畏惧/害怕', '胃口', '未来'],
+            answer: 1,
+            hint: '"无畏"就是"不___"，想想"无畏"是"不害怕"还是"不敬畏"？',
+            explanation: '<strong>解析：</strong><br>① "英勇无畏"→勇敢出众，毫不害怕<br>② "英"→出众的，"勇"→勇敢，"无"→没有<br>③ "<strong>畏</strong>"→<strong>畏惧、害怕</strong><br>④ 所以"无畏"就是"不害怕"。<br>⑤ 选 B。'
+          },
+          {
+            question: '下列诗句中，哪一句表达了爱国之情？',
+            options: ['"床前明月光，疑是地上霜"', '"僵卧孤村不自哀，尚思为国戍轮台"', '"春眠不觉晓，处处闻啼鸟"', '"锄禾日当午，汗滴禾下土"'],
+            answer: 1,
+            hint: '看哪句提到了"为国"、"轮台"（边疆），表达了为国戍边的感情。',
+            explanation: '<strong>解析：</strong><br>① A→思乡之情（李白《静夜思》）<br>② <strong>B→"尚思为国戍轮台"表达了至死不渝的爱国情怀</strong>（陆游）<br>③ C→描写春天（孟浩然）<br>④ D→悯农（李绅）<br>⑤ 选 B。'
+          },
+          {
+            question: '《军神》中刘伯承为什么被称为"军神"？',
+            options: ['因为他打了很多胜仗', '因为他手术不用麻药，意志如钢铁', '因为他长得很高', '因为他是元帅'],
+            answer: 1,
+            hint: '课文的中心事件是什么？刘伯承做了一件常人都做不到的事。',
+            explanation: '<strong>解析：</strong><br>① 课文重点是刘伯承在<strong>眼睛手术中不用麻药</strong>。<br>② 他为了不影响大脑，咬牙忍痛做完了手术。<br>③ 医生惊叹："你是一个真正的男子汉，一块会说话的钢板！你堪称<strong>军神</strong>！"<br>④ 选 B。'
+          },
+          {
+            question: '"百折不挠"的"挠"是什么意思？',
+            options: ['挠痒痒', '弯曲/屈服', '阻挠', '挠头'],
+            answer: 1,
+            hint: '"不挠"就是"不弯曲、不屈服"。想象遇到挫折也不弯曲退缩。',
+            explanation: '<strong>解析：</strong><br>① "百折"→多次挫折<br>② "<strong>挠</strong>"→<strong>弯曲、屈服</strong><br>③ "不挠"→不弯曲、不屈服<br>④ 整体：无论受多少挫折都不屈服退缩。<br>⑤ 选 B。'
+          },
+          {
+            question: '《球王贝利》中，贝利小时候最突出的特点是什么？',
+            options: ['家里很富有', '天赋异禀不需要努力', '虽然贫穷但坚持梦想刻苦训练', '一出生就是球王'],
+            answer: 2,
+            hint: '贝利的成功不是偶然的，他从贫民窟走出来靠的是什么？',
+            explanation: '<strong>解析：</strong><br>① 贝利从小生活在贫民窟，条件很差。<br>② 他用破布做足球、赤脚踢球，<strong>虽贫穷但坚持梦想刻苦训练</strong>。<br>③ 最终成为世界级球王，靠的是<strong>勤奋和坚持</strong>。<br>④ 选 C。'
           }
         ]
       },
@@ -2138,6 +2678,42 @@ const CURRICULUM = {
             answer: 1,
             hint: '做手工时用来把纸粘在一起的文具。',
             explanation: '<strong>解析：</strong><br>① "Glue"是手工课上常用的文具。<br>② A剪刀=scissors，B胶水=glue，C胶带=tape，D订书机=stapler。<br>③ "Glue"的中文意思是<strong>胶水</strong>，选B。'
+          },
+          // === 进阶题 16-20 ===
+          {
+            question: '"I have two ______." 横线处应该填什么？',
+            options: ['pen', 'pens', 'penes', 'pencil'],
+            answer: 1,
+            hint: 'two后面跟的名词要用复数形式，pen的复数是pens。',
+            explanation: '<strong>解析：</strong><br>① "two"后面接可数名词的<strong>复数形式</strong>。<br>② pen → <strong>pens</strong>（复数加s）。<br>③ C "penes"是错误的变形。<br>④ 选 B。'
+          },
+          {
+            question: '"______ is your schoolbag?" "It\'s on the desk." 应该填什么？',
+            options: ['What', 'Where', 'Who', 'How'],
+            answer: 1,
+            hint: '回答是"它在桌子上"，说明问的是"在哪里"。',
+            explanation: '<strong>解析：</strong><br>① 回答"It\'s on the desk"说的是<strong>位置</strong>。<br>② 问位置的疑问词是<strong>"Where"</strong>。<br>③ "Where is your schoolbag?" = "你的书包在哪里？"<br>④ 选 B。'
+          },
+          {
+            question: '下面哪组单词的意思完全正确？',
+            options: ['ruler=橡皮, pen=钢笔', 'book=书, eraser=橡皮', 'pencil=钢笔, crayon=尺子', 'schoolbag=铅笔盒, ruler=胶水'],
+            answer: 1,
+            hint: '逐一核对每组单词的意思是否正确。',
+            explanation: '<strong>解析：</strong><br>① A❌ ruler=尺子（不是橡皮）<br>② <strong>B✅ book=书, eraser=橡皮</strong><br>③ C❌ pencil=铅笔（不是钢笔）, crayon=蜡笔（不是尺子）<br>④ D❌ schoolbag=书包（不是铅笔盒）, ruler=尺子（不是胶水）<br>⑤ 选 B。'
+          },
+          {
+            question: '"What\'s this?" 和 "What\'s that?" 的区别是什么？',
+            options: ['没有区别', '"this"指近处的东西，"that"指远处的东西', '"this"指远处，"that"指近处', '"this"只能指人'],
+            answer: 1,
+            hint: '近的用this，远的用that。',
+            explanation: '<strong>解析：</strong><br>① <strong>this</strong>（这）→ 指离说话人<strong>近</strong>的东西<br>② <strong>that</strong>（那）→ 指离说话人<strong>远</strong>的东西<br>③ "What\'s this?" = "这是什么？"（近）<br>④ "What\'s that?" = "那是什么？"（远）<br>⑤ 选 B。'
+          },
+          {
+            question: '你能选出正确描述"教室里"的场景的句子吗？',
+            options: ['"There is a swimming pool"', '"There is a blackboard and many desks"', '"There are many animals"', '"There is a kitchen"'],
+            answer: 1,
+            hint: '教室( classroom )里有什么？黑板、课桌、椅子……',
+            explanation: '<strong>解析：</strong><br>① A→游泳池不在教室里 ❌<br>② <strong>B→黑板和许多课桌，这是教室的典型场景</strong> ✅<br>③ C→动物不在教室里 ❌<br>④ D→厨房不在教室里 ❌<br>⑤ 选 B。'
           }
         ]
       },
@@ -2267,6 +2843,42 @@ const CURRICULUM = {
             answer: 0,
             hint: '"May I"是委婉地请求允许，表示"我可以……吗？"',
             explanation: '<strong>解析：</strong><br>① "May I"是委婉地请求允许，意思是"我可以……吗？"<br>② "come in"是"进来"的意思。<br>③ "May I come in?"的中文意思是<strong>"我可以进来吗？"</strong>，选A。'
+          },
+          // === 进阶题 16-20 ===
+          {
+            question: '"Don\'t ______ in the library." 应该填什么？',
+            options: ['quiet', 'shout', 'read', 'study'],
+            answer: 1,
+            hint: '在图书馆里不能做什么？应该是"不要大声喧哗"。',
+            explanation: '<strong>解析：</strong><br>① "Don\'t"后面跟动词原形，表示"不要做……"。<br>② 图书馆要安静，不能<strong>大喊大叫（shout）</strong>。<br>③ "Don\'t shout in the library." = "不要在图书馆里大声喧哗。"<br>④ 选 B。'
+          },
+          {
+            question: '"Be quiet" 和 "Please be quiet" 哪个更礼貌？',
+            options: ['Be quiet', 'Please be quiet', '一样礼貌', '都不礼貌'],
+            answer: 1,
+            hint: '加了"Please"的句子语气更怎么样？',
+            explanation: '<strong>解析：</strong><br>① "Be quiet" → 直接说"安静"，偏命令语气。<br>② <strong>"Please be quiet" → 加了"please"</strong>，语气更<strong>礼貌、客气</strong>。<br>③ 所以B比A更礼貌。<br>④ 选 B。'
+          },
+          {
+            question: '"May I go to the bathroom?" 的回答应该是？',
+            options: ['"Yes, you may."', '"I\'m fine."', '"Thank you."', '"Good morning."'],
+            answer: 0,
+            hint: '对方在征求许可（May I...），肯定回答是什么？',
+            explanation: '<strong>解析：</strong><br>① "May I..."是征求许可的句型："我可以……吗？"<br>② 肯定回答：<strong>"Yes, you may."</strong>（是的，你可以。）<br>③ B是回答"How are you?"的，C是道谢，D是问好。<br>④ 选 A。'
+          },
+          {
+            question: '选出正确的否定祈使句：',
+            options: ['"No run in class."', '"Don\'t run in class."', '"Not run in class."', '"Run not in class."'],
+            answer: 1,
+            hint: '否定祈使句的正确结构是"Don\'t + 动词原形"。',
+            explanation: '<strong>解析：</strong><br>① 否定祈使句公式：<strong>Don\'t + 动词原形</strong><br>② "No run"❌应为"Don\'t run"或"No running"<br>③ <strong>"Don\'t run"</strong> ✅ 正确<br>④ "Not run"❌缺少助动词<br>⑤ 选 B。'
+          },
+          {
+            question: '下面哪个单词和"Listen"的意思最接近？',
+            options: ['看', '写', '听', '跑'],
+            answer: 2,
+            hint: '"Listen"是什么意思？"Listen to the teacher"是什么意思？',
+            explanation: '<strong>解析：</strong><br>① "Listen" = <strong>听</strong><br>② 看 = look/watch，写 = write，跑 = run<br>③ 选 C。'
           }
         ]
       },
@@ -2396,6 +3008,42 @@ const CURRICULUM = {
             answer: 2,
             hint: '"Volley"有"截击"的意思，这是用双手垫击的球类运动。',
             explanation: '<strong>解析：</strong><br>① "Volleyball"是一种球类运动，中间有网，用手击球。<br>② A足球=football，B篮球=basketball，C排球=volleyball，D羽毛球=badminton。<br>③ "Volleyball"的中文意思是<strong>排球</strong>，选C。'
+          },
+          // === 进阶题 16-20 ===
+          {
+            question: '"I like ______ basketball." 横线处应该填什么？',
+            options: ['play', 'plays', 'playing', 'played'],
+            answer: 2,
+            hint: '"like"后面跟动词时，要用动词-ing形式。like + V-ing',
+            explanation: '<strong>解析：</strong><br>① like后面跟动词用<strong>ing形式</strong>：like + V-ing<br>② like playing = 喜欢打（篮球）<br>③ 也可以用 "like to play"，但选项里没有。<br>④ 选 C。'
+          },
+          {
+            question: '"Can you swim?" 的否定回答是什么？',
+            options: ['"Yes, I can."', '"No, I can\'t."', '"No, I don\'t."', '"Yes, I do."'],
+            answer: 1,
+            hint: '问句有"Can"，回答也要用"can"。否定是"can\'t"。',
+            explanation: '<strong>解析：</strong><br>① 问句：Can you swim?<br>② 肯定：<strong>Yes, I can.</strong><br>③ 否定：<strong>No, I can\'t.</strong> (can\'t = cannot)<br>④ 选 B。'
+          },
+          {
+            question: '选出和"Let\'s play football!"意思最接近的句子：',
+            options: ['"I can play football."', '"I like football."', '"Come on! Let us play football!"', '"Football is fun."'],
+            answer: 2,
+            hint: '"Let\'s" = "Let us"，是邀请别人一起做某事。',
+            explanation: '<strong>解析：</strong><br>① "Let\'s play football!" = 让我们踢足球吧！<br>② "Let\'s" = <strong>Let us</strong>（让我们）<br>③ C "Come on! <strong>Let us</strong> play football!" 意思最接近。<br>④ A说能力、B说喜好、D说评价。<br>⑤ 选 C。'
+          },
+          {
+            question: '下面哪个运动是在水里进行的？',
+            options: ['Football', 'Basketball', 'Swimming', 'Ping-pong'],
+            answer: 2,
+            hint: '哪个运动需要游泳池？',
+            explanation: '<strong>解析：</strong><br>① Football→在草地上踢<br>② Basketball→在篮球场上打<br>③ <strong>Swimming→在水里游</strong> ✅<br>④ Ping-pong→在桌子上打<br>⑤ 选 C。'
+          },
+          {
+            question: '"He can ______ very fast." 横线处应该填什么？',
+            options: ['runs', 'running', 'run', 'ran'],
+            answer: 2,
+            hint: '"can"后面跟动词原形，不需要加s或ing。',
+            explanation: '<strong>解析：</strong><br>① can是情态动词，后面跟<strong>动词原形</strong>。<br>② He can <strong>run</strong> very fast. = 他跑得很快。<br>③ runs/running/ran 都是错误形式。<br>④ 选 C。'
           }
         ]
       },
@@ -2525,6 +3173,42 @@ const CURRICULUM = {
             answer: 1,
             hint: '"Drive"是"驾驶"，"driver"就是"驾驶的人"。',
             explanation: '<strong>解析：</strong><br>① "Driver"由"drive(驾驶)"加"er(表示人)"构成。<br>② A飞行员=pilot，B司机=driver，C厨师=cook，D工人=worker。<br>③ "Driver"的中文意思是<strong>司机</strong>，选B。'
+          },
+          // === 进阶题 16-20 ===
+          {
+            question: '"What ______ your father do?" 横线处应该填什么？',
+            options: ['do', 'does', 'is', 'are'],
+            answer: 1,
+            hint: 'your father是第三人称单数（他），问"做什么工作"要用does。',
+            explanation: '<strong>解析：</strong><br>① "your father" = <strong>第三人称单数</strong>（他）<br>② 询问职业：What <strong>does</strong> + 三单主语 + do?<br>③ "What does your father do?" = 你爸爸做什么工作？<br>④ 选 B。'
+          },
+          {
+            question: '"She works in a school. She teaches students." 她最有可能是？',
+            options: ['A doctor', 'A teacher', 'A cook', 'A driver'],
+            answer: 1,
+            hint: '在学校里教书的人是什么职业？',
+            explanation: '<strong>解析：</strong><br>① 关键词：works in <strong>a school</strong>（在学校工作）, teaches <strong>students</strong>（教学生）<br>② → 她的职业是<strong>老师（teacher）</strong><br>③ 选 B。'
+          },
+          {
+            question: '"I want to ______ a pilot." 横线处应该填什么？',
+            options: ['am', 'is', 'be', 'are'],
+            answer: 2,
+            hint: '"want to"后面跟动词原形，表示"想要成为"用"be"。',
+            explanation: '<strong>解析：</strong><br>① want to + <strong>动词原形</strong><br>② "想要成为" = want to <strong>be</strong><br>③ "I want to be a pilot." = 我想成为一名飞行员。<br>④ 选 C。'
+          },
+          {
+            question: '选出正确的问答搭配：',
+            options: ['"What does he do? — He is tall."', '"What does he do? — He is a firefighter."', '"What does he do? — He is happy."', '"What does he do? — He is 10."'],
+            answer: 1,
+            hint: '"What does he do?"问的是职业，回答应该是什么？',
+            explanation: '<strong>解析：</strong><br>① "What does he do?" → 问<strong>职业</strong>（他是做什么工作的？）<br>② A→回答身高 ❌<br>③ <strong>B→回答职业（消防员）</strong> ✅<br>④ C→回答心情 ❌<br>⑤ D→回答年龄 ❌<br>⑥ 选 B。'
+          },
+          {
+            question: '下面哪个职业通常在厨房工作？',
+            options: ['A pilot', 'A cook', 'A teacher', 'A doctor'],
+            answer: 1,
+            hint: '在厨房做饭的人是什么职业？',
+            explanation: '<strong>解析：</strong><br>① pilot→飞行员，在飞机上<br>② <strong>cook→厨师</strong>，在厨房 ✅<br>③ teacher→老师，在学校<br>④ doctor→医生，在医院<br>⑤ 选 B。'
           }
         ]
       },
@@ -2654,6 +3338,78 @@ const CURRICULUM = {
             answer: 0,
             hint: '"Two"是"二"，"sisters"是"sister"的复数形式。',
             explanation: '<strong>解析：</strong><br>① "I"是"我"，"have"是"有"，"two"是"两个"，"sisters"是"姐妹（复数）"。<br>② "I have two sisters."的中文意思是<strong>"我有两个姐妹"</strong>。<br>③ "sisters"用了复数，表示不止一个。选A。'
+          },
+          // === 进阶题 16-20 ===
+          {
+            question: '"My father\'s mother is my ______." 横线处应该填什么？',
+            options: ['sister', 'grandmother', 'aunt', 'uncle'],
+            answer: 1,
+            hint: '爸爸的妈妈是谁？就是你的……',
+            explanation: '<strong>解析：</strong><br>① father\'s mother = 爸爸的妈妈<br>② = <strong>grandmother</strong>（奶奶/外婆）<br>③ 英语中grandmother统称奶奶和外婆。<br>④ 选 B。'
+          },
+          {
+            question: '"______ is my sister, Lily." 应该填什么？',
+            options: ['She', 'He', 'It', 'They'],
+            answer: 0,
+            hint: 'sister是女性，用哪个代词指代女性？',
+            explanation: '<strong>解析：</strong><br>① sister = 姐妹（女性）<br>② 女性用<strong>She</strong>指代<br>③ "She is my sister, Lily." = 她是我的妹妹Lily。<br>④ 选 A。'
+          },
+          {
+            question: '"I have two ______." 横线处填什么？（表示"两个兄弟"）',
+            options: ['brother', 'brothers', 'brotheres', 'brothering'],
+            answer: 1,
+            hint: '两个以上，用复数。brother的复数是brothers。',
+            explanation: '<strong>解析：</strong><br>① two后面跟可数名词<strong>复数</strong>。<br>② brother → <strong>brothers</strong><br>③ "I have two brothers." = 我有两个兄弟。<br>④ 选 B。'
+          },
+          {
+            question: '"My parents" 指的是谁？',
+            options: ['我的爸爸', '我的妈妈', '我的父母（爸爸和妈妈）', '我的爷爷奶奶'],
+            answer: 2,
+            hint: '"parents"是"parent"的复数，指父母双方。',
+            explanation: '<strong>解析：</strong><br>① parent → 父亲或母亲（单数）<br>② <strong>parents</strong> → 父亲和母亲（复数）= <strong>父母</strong><br>③ "My parents" = 我的爸爸妈妈<br>④ 选 C。'
+          },
+          {
+            question: '下面哪组家庭关系是正确的？',
+            options: ['"My aunt is my mother\'s sister."', '"My uncle is my sister."', '"My grandfather is my brother."', '"My sister is my father."'],
+            answer: 0,
+            hint: '逐一检查每句话的家庭关系逻辑。',
+            explanation: '<strong>解析：</strong><br>① <strong>A✅</strong> aunt（阿姨/姑姑）= 妈妈的姐妹，正确！<br>② B❌ uncle（叔叔）不可能是sister（姐妹）<br>③ C❌ grandfather（爷爷）不可能是brother（兄弟）<br>④ D❌ sister（姐妹）不可能是father（爸爸）<br>⑤ 选 A。'
+          },
+          // === 进阶题 16-20 ===
+          {
+            question: '"I can ______ a picture." 横线处应该填什么？',
+            options: ['draw', 'draws', 'drawing', 'drew'],
+            answer: 0,
+            hint: '"can"后面跟动词原形，不受主语影响。',
+            explanation: '<strong>解析：</strong><br>① can后面跟<strong>动词原形</strong><br>② "I can <strong>draw</strong> a picture." = 我会画一幅画。<br>③ draws/drawing/drew 都是错误形式。<br>④ 选 A。'
+          },
+          {
+            question: '"I am ______ because I got 100 points!"（我考了100分所以很____）横线填什么？',
+            options: ['sad', 'angry', 'happy', 'tired'],
+            answer: 2,
+            hint: '考了100分，心情应该是开心的还是难过的？',
+            explanation: '<strong>解析：</strong><br>① 考了100分，心情当然是<strong>开心（happy）</strong>的！<br>② sad = 难过，angry = 生气，tired = 累<br>③ "I am happy!" = 我很开心！<br>④ 选 C。'
+          },
+          {
+            question: '"I like to ______." 如果想说"我喜欢唱歌"，横线填什么？',
+            options: ['dance', 'draw', 'sing', 'run'],
+            answer: 2,
+            hint: '唱歌的英文是sing。',
+            explanation: '<strong>解析：</strong><br>① dance→跳舞，draw→画画，<strong>sing→唱歌</strong>，run→跑步<br>② "I like to sing." = 我喜欢唱歌。<br>③ 选 C。'
+          },
+          {
+            question: '"What about you?" 在对话中用来做什么？',
+            options: ['问别人的年龄', '反问对方同样的问题', '问别人的地址', '问时间'],
+            answer: 1,
+            hint: '当你说完自己的情况后，用"What about you?"来反问对方。',
+            explanation: '<strong>解析：</strong><br>① "What about you?" = 你呢？<br>② 用法：A说"I like football." → B说"I like basketball. <strong>What about you?</strong>"<br>③ 用来<strong>反问对方同样的问题</strong>。<br>④ 选 B。'
+          },
+          {
+            question: '"She can dance, ______ she can\'t sing." 横线处填什么？',
+            options: ['and', 'but', 'or', 'so'],
+            answer: 1,
+            hint: '前面说"会"，后面说"不会"，意思相反，用哪个连词？',
+            explanation: '<strong>解析：</strong><br>① 前半句：会跳舞 ✅<br>② 后半句：不会唱歌 ❌<br>③ 前后<strong>意思相反</strong>，用<strong>but（但是）</strong>连接。<br>④ "She can dance, <strong>but</strong> she can\'t sing."<br>⑤ 选 B。'
           }
         ]
       },
