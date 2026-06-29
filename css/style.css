@@ -1388,3 +1388,126 @@ body {
   font-size: 18px;
   border-radius: 18px;
 }
+
+/* ======== 奖励独立弹窗 ======== */
+.reward-modal-content {
+  background: linear-gradient(180deg, #fff9e6 0%, #ffe0b2 30%, #ffcc80 100%);
+  border-radius: 28px;
+  padding: 36px 28px;
+  max-width: 420px;
+  width: 92%;
+  text-align: center;
+  animation: rewardBounceIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 0 20px 60px rgba(255, 152, 0, 0.5), 0 0 0 6px rgba(255, 152, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.reward-modal-content::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+  animation: rewardShineSlow 3s linear infinite;
+}
+
+@keyframes rewardShineSlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes rewardBounceIn {
+  0% { transform: scale(0.3) rotate(-10deg); opacity: 0; }
+  60% { transform: scale(1.05) rotate(2deg); }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+.reward-modal-sparkle {
+  font-size: 48px;
+  margin-bottom: 8px;
+  animation: sparkleFloat 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes sparkleFloat {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-8px) scale(1.1); }
+}
+
+.reward-coins-big {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.coin-big {
+  font-size: 64px;
+  display: inline-block;
+  animation: coinBounceIn 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  opacity: 0;
+}
+
+@keyframes coinBounceIn {
+  0% { transform: translateY(-100px) rotate(-180deg) scale(0); opacity: 0; }
+  70% { transform: translateY(10px) rotate(10deg) scale(1.2); opacity: 1; }
+  100% { transform: translateY(0) rotate(360deg) scale(1); opacity: 1; }
+}
+
+.reward-amount-big {
+  margin: 12px 0;
+}
+
+.reward-yuan {
+  font-size: 36px;
+  font-weight: 900;
+  color: #ff6b35;
+  vertical-align: top;
+}
+
+.reward-num {
+  font-size: 80px;
+  font-weight: 900;
+  color: #ff6b35;
+  text-shadow: 0 6px 12px rgba(255, 107, 53, 0.5);
+  animation: rewardNumPulse 0.5s ease-in-out infinite alternate;
+  line-height: 1;
+}
+
+@keyframes rewardNumPulse {
+  0% { transform: scale(1); text-shadow: 0 6px 12px rgba(255, 107, 53, 0.5); }
+  100% { transform: scale(1.06); text-shadow: 0 8px 20px rgba(255, 107, 53, 0.7); }
+}
+
+.reward-title-big {
+  font-size: 24px;
+  font-weight: 800;
+  color: #e65100;
+  margin-bottom: 6px;
+}
+
+.reward-subtitle {
+  font-size: 16px;
+  color: #bf360c;
+  margin-bottom: 16px;
+}
+
+.reward-subtitle strong {
+  font-size: 22px;
+  color: #ff6d00;
+}
+
+.reward-screenshot-tip {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  padding: 16px;
+  border: 3px dashed #ff9800;
+  animation: tipGlow 1s ease-in-out infinite alternate;
+}
+
+@keyframes tipGlow {
+  0% { border-color: #ff9800; box-shadow: 0 0 10px rgba(255, 152, 0, 0.3); }
+  100% { border-color: #ff5722; box-shadow: 0 0 25px rgba(255, 87, 34, 0.5); }
+}

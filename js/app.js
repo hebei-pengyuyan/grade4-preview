@@ -572,49 +572,26 @@ function showResult() {
   // 判断是否是首次满分
   const isPerfect = pct === 100;
   const alreadyRewarded = state.isUnitRewarded(currentUnit);
+  const shouldReward = isPerfect && !alreadyRewarded;
+  let rewardAmount = 0;
 
-  let emoji, message, extraHTML = '';
-
-  if (isPerfect) {
-    // ======== 满分通过 ========
-    if (!alreadyRewarded) {
-      // 🎉 首次满分！触发奖励
-      const rewardAmount = state.getRewardAmount();
-      state.markUnitRewarded(currentUnit);
-      emoji = '💰';
-      message = '🎉 满分通关！恭喜获得奖励！';
-
-      // 播放赚钱音效
-      playRewardSound();
-
-      extraHTML = `
-        <div class="reward-banner">
-          <div class="reward-coins">
-            ${Array.from({length: Math.min(rewardAmount, 5)}, (_, i) => `
-              <span class="coin coin-${i+1}" style="animation-delay:${i*0.2}s">🪙</span>
-            `).join('')}
-          </div>
-          <div class="reward-amount">
-            <span class="reward-number">¥${rewardAmount}</span>
-          </div>
-          <div class="reward-msg">
-            🎊 这是你第 <strong>${state.rewardedUnits.length}</strong> 个满分单元！<br>
-            <span style="font-size:20px;color:#ff6b35;">📸 凭此截图找爸爸领取现金奖励！</span>
-          </div>
-          <div class="reward-stars">
-            ${'⭐'.repeat(Math.min(state.rewardedUnits.length, 5))}
-          </div>
-        </div>
-      `;
-      setTimeout(() => launchConfetti(100), 300);
-      setTimeout(() => launchConfetti(80), 800);
-    } else {
-      // 已经发过奖励了
-      emoji = '🏆';
-      message = '满分！你就是学习小天才！🎉（该单元奖励已领取）';
-    }
+  // 如果是首次满分，先标记发奖
+  if (shouldReward) {
+    rewardAmount = state.getRewardAmount();
+    state.markUnitRewarded(currentUnit);
     state.perfectScores++;
     state.save();
+  } else if (isPerfect) {
+    state.perfectScores++;
+    state.save();
+  }
+
+  let emoji, message;
+  if (isPerfect) {
+    emoji = '🏆';
+    message = shouldReward
+      ? '满分通关！🎉 奖励马上揭晓…'
+      : '满分！你就是学习小天才！🎉（该单元奖励已领取）';
   } else if (pct >= 80) {
     emoji = '🌟';
     message = '太棒了！学得很扎实！继续加油冲击满分拿奖励哦！';
@@ -634,7 +611,6 @@ function showResult() {
       <span class="result-emoji">${emoji}</span>
       <div class="result-score">${quizScore} / ${total}</div>
       <div class="result-message">${message}</div>
-      ${extraHTML}
       <div class="result-details">
         <div class="result-stat">
           <div class="stat-value">${pct}%</div>
@@ -667,6 +643,54 @@ function showResult() {
       </div>
     </div>
   `;
+
+  // ======== 首次满分 → 弹出独立奖励弹窗（醒目！） ========
+  if (shouldReward) {
+    setTimeout(() => {
+      showRewardModal(rewardAmount);
+      playRewardSound();
+      launchConfetti(100);
+      setTimeout(() => launchConfetti(80), 500);
+    }, 600);
+  }
+}
+
+// ======== 奖励独立弹窗 ========
+function showRewardModal(amount) {
+  const overlay = $('#modal-overlay');
+  overlay.classList.add('show');
+  overlay.innerHTML = `
+    <div class="reward-modal-content">
+      <div class="reward-modal-sparkle">✨💰✨</div>
+      <div class="reward-coins-big">
+        ${Array.from({length: Math.min(amount, 5)}, (_, i) => `
+          <span class="coin-big coin-${i+1}" style="animation-delay:${i*0.25}s">🪙</span>
+        `).join('')}
+      </div>
+      <div class="reward-amount-big">
+        <span class="reward-yuan">¥</span><span class="reward-num">${amount}</span>
+      </div>
+      <div class="reward-title-big">🎊 恭喜！满分通关奖励！</div>
+      <div class="reward-subtitle">
+        这是你第 <strong>${state.rewardedUnits.length}</strong> 个满分通过的单元
+      </div>
+      <div class="reward-screenshot-tip">
+        <span style="font-size:28px;">📸</span><br>
+        <span style="font-size:20px;font-weight:900;color:#ff4444;background:#fff3cd;padding:8px 20px;border-radius:12px;display:inline-block;margin-top:8px;">
+          凭此截图找爸爸领钱！
+        </span>
+      </div>
+      <button class="btn btn-gold btn-lg" onclick="hideRewardModal()" style="margin-top:20px;font-size:20px;padding:16px 40px;">
+        😄 好的！我去找爸爸～
+      </button>
+    </div>
+  `;
+}
+
+function hideRewardModal() {
+  $('#modal-overlay').classList.remove('show');
+  // 回到首页
+  goHome();
 }
 
 // ======== 奖励音效 ========
