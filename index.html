@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>🎓 四年级预习乐园 - 冀教版</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+  <meta name="description" content="冀教版四年级上学期趣味预习课程">
+  <meta name="theme-color" content="#FF6B6B">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- 顶部栏 -->
+    <header class="top-bar">
+      <div class="logo" onclick="goHome()">
+        <span class="logo-icon">🦉</span>
+        <h1>四年级预习乐园</h1>
+      </div>
+      <div class="stars-display">
+        <span class="star-icon">⭐</span>
+        <span id="total-stars">0</span>
+      </div>
+    </header>
+
+    <!-- 导航 -->
+    <nav class="main-nav">
+      <button class="nav-btn active" data-page="home">🏠 首页</button>
+    </nav>
+
+    <!-- ======== 页面容器 ======== -->
+
+    <!-- 首页 -->
+    <div id="home-page" class="page active">
+      <div id="home-content"></div>
+    </div>
+
+    <!-- 科目页面（单元列表） -->
+    <div id="subject-page" class="page">
+      <div id="subject-header" class="page-header"></div>
+      <div id="unit-list" class="unit-list"></div>
+    </div>
+
+    <!-- 课程页面 -->
+    <div id="lesson-page" class="page">
+      <div id="lesson-header" class="page-header"></div>
+      <div id="lesson-content"></div>
+    </div>
+
+    <!-- 测验页面 -->
+    <div id="quiz-page" class="page">
+      <div class="quiz-header">
+        <button class="back-btn" onclick="goHome()" style="background:var(--bg);border:none;width:36px;height:36px;border-radius:10px;font-size:18px;cursor:pointer;">←</button>
+        <div class="quiz-progress">
+          <div class="progress-bar">
+            <div id="quiz-progress-fill" class="progress-fill" style="width:0%"></div>
+          </div>
+          <span id="quiz-counter">0 / 0</span>
+        </div>
+        <div id="quiz-score-display" class="quiz-score">⭐ 0</div>
+      </div>
+      <div id="question-area"></div>
+      <div id="question-progress-map" class="progress-map"></div>
+    </div>
+
+    <!-- 练习页面 -->
+    <div id="practice-page" class="page">
+      <div class="quiz-header practice-header">
+        <button class="back-btn" onclick="endPractice()">←</button>
+        <div class="quiz-progress">
+          <div class="progress-bar">
+            <div id="practice-progress-fill" class="progress-fill" style="width:0%"></div>
+          </div>
+          <span id="practice-counter" class="practice-counter">已练习 0 / 0 题</span>
+        </div>
+        <span style="font-size:13px;color:#856404;font-weight:600;">📝 练习模式</span>
+      </div>
+      <div id="practice-actions" class="practice-actions-bar">
+        <button class="practice-btn" onclick="showLessonReference()">📖 看知识点</button>
+        <button class="practice-btn" onclick="showPracticeHint()">💡 提示</button>
+      </div>
+      <div id="practice-question-area"></div>
+      <div id="practice-nav" style="display:flex;gap:12px;justify-content:center;margin-top:20px;flex-wrap:wrap;">
+        <button class="btn btn-outline" id="prev-practice-btn" onclick="prevPracticeQuestion()" disabled>⬅ 上一题</button>
+        <button class="btn btn-primary" id="next-practice-btn" onclick="nextPracticeQuestion()">下一题 ➡</button>
+        <button class="btn btn-pink" onclick="endPractice()">🚪 退出</button>
+      </div>
+    </div>
+
+    <!-- 结果页面 -->
+    <div id="result-page" class="page">
+      <div id="result-content"></div>
+    </div>
+
+    <!-- 错题本页面 -->
+    <div id="wrongbook-page" class="page">
+      <div id="wrongbook-header" class="page-header"></div>
+      <div id="wrongbook-content"></div>
+    </div>
+
+    <!-- 底部间距 -->
+    <div style="height:80px;"></div>
+  </div>
+
+  <!-- 模态框 -->
+  <div id="modal-overlay" class="modal-overlay"></div>
+
+  <!-- 脚本 -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
