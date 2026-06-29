@@ -1273,3 +1273,118 @@ body {
   color: var(--primary);
   flex-shrink: 0;
 }
+
+/* ======== 奖励弹窗 ======== */
+.reward-banner {
+  background: linear-gradient(135deg, #fff7e6 0%, #ffe0b2 50%, #ffcc80 100%);
+  border: 4px solid #ff9800;
+  border-radius: 24px;
+  padding: 28px 20px;
+  margin: 20px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: rewardPopIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 0 0 40px rgba(255, 152, 0, 0.5), inset 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.reward-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, transparent 60%);
+  animation: rewardShine 2s linear infinite;
+}
+
+@keyframes rewardPopIn {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes rewardShine {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.reward-coins {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.coin {
+  font-size: 48px;
+  display: inline-block;
+  animation: coinDrop 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  opacity: 0;
+}
+
+@keyframes coinDrop {
+  0% { transform: translateY(-60px) rotate(0deg); opacity: 0; }
+  60% { opacity: 1; }
+  100% { transform: translateY(0) rotate(360deg); opacity: 1; }
+}
+
+.reward-amount {
+  margin-bottom: 12px;
+}
+
+.reward-number {
+  font-size: 56px;
+  font-weight: 900;
+  color: #ff6b35;
+  text-shadow: 0 4px 8px rgba(255, 107, 53, 0.4);
+  animation: rewardPulse 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes rewardPulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+.reward-msg {
+  font-size: 16px;
+  color: #555;
+  line-height: 2;
+  margin-bottom: 8px;
+}
+
+.reward-msg strong {
+  font-size: 24px;
+  color: #ff9800;
+}
+
+.reward-stars {
+  font-size: 28px;
+  letter-spacing: 6px;
+  animation: rewardPulse 1s ease-in-out infinite alternate;
+}
+
+/* ======== 金色按钮 ======== */
+.btn-gold {
+  background: linear-gradient(135deg, #ff9800, #ff6b35);
+  color: white;
+  box-shadow: 0 4px 20px rgba(255, 152, 0, 0.5);
+  animation: goldGlow 1.5s ease-in-out infinite alternate;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255, 152, 0, 0.6);
+}
+
+@keyframes goldGlow {
+  0% { box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4); }
+  100% { box-shadow: 0 4px 30px rgba(255, 152, 0, 0.7); }
+}
+
+.btn-lg {
+  padding: 14px 32px;
+  font-size: 18px;
+  border-radius: 18px;
+}

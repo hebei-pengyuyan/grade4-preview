@@ -25,6 +25,7 @@ class AppState {
       this.achievementsUnlocked = [];
       this.easterEggsFound = 0;
       this.wrongAnswers = {};       // { unitId: [{ questionIndex, question, options, answer, selected, explanation, hint }] }
+      this.rewardedUnits = [];      // 已发过奖励的单元列表（满分通过才算）
     }
     this.updateStarDisplay();
   }
@@ -45,7 +46,8 @@ class AppState {
       consecutiveDays: this.consecutiveDays,
       achievementsUnlocked: this.achievementsUnlocked,
       easterEggsFound: this.easterEggsFound,
-      wrongAnswers: this.wrongAnswers
+      wrongAnswers: this.wrongAnswers,
+      rewardedUnits: this.rewardedUnits
     }));
   }
 
@@ -164,6 +166,24 @@ class AppState {
     if (p.bestScore >= 60) return 'completed';
     if (p.questionsDone > 0) return 'partial';
     return 'pending';
+  }
+
+  // ======== 奖励系统 ========
+  getRewardAmount() {
+    // 已发过奖励的单元数 + 1 = 本次是第几个获奖单元
+    const count = this.rewardedUnits.length + 1;
+    return Math.min(count, 5);
+  }
+
+  markUnitRewarded(unitId) {
+    if (!this.rewardedUnits.includes(unitId)) {
+      this.rewardedUnits.push(unitId);
+      this.save();
+    }
+  }
+
+  isUnitRewarded(unitId) {
+    return this.rewardedUnits.includes(unitId);
   }
 }
 
@@ -549,21 +569,61 @@ function showResult() {
   const starsEarned = Math.ceil(quizScore / 2);
   if (starsEarned > 0) state.addStars(starsEarned);
 
-  let emoji, message;
-  if (pct === 100) {
-    emoji = '🏆';
-    message = '满分！你就是学习小天才！🎉';
+  // 判断是否是首次满分
+  const isPerfect = pct === 100;
+  const alreadyRewarded = state.isUnitRewarded(currentUnit);
+
+  let emoji, message, extraHTML = '';
+
+  if (isPerfect) {
+    // ======== 满分通过 ========
+    if (!alreadyRewarded) {
+      // 🎉 首次满分！触发奖励
+      const rewardAmount = state.getRewardAmount();
+      state.markUnitRewarded(currentUnit);
+      emoji = '💰';
+      message = `🎉 满分通关！恭喜获得奖励！';
+
+      // 播放赚钱音效
+      playRewardSound();
+
+      extraHTML = `
+        <div class="reward-banner">
+          <div class="reward-coins">
+            ${Array.from({length: Math.min(rewardAmount, 5)}, (_, i) => `
+              <span class="coin coin-${i+1}" style="animation-delay:${i*0.2}s">🪙</span>
+            `).join('')}
+          </div>
+          <div class="reward-amount">
+            <span class="reward-number">¥${rewardAmount}</span>
+          </div>
+          <div class="reward-msg">
+            🎊 这是你第 <strong>${state.rewardedUnits.length}</strong> 个满分单元！<br>
+            <span style="font-size:20px;color:#ff6b35;">📸 凭此截图找爸爸领取现金奖励！</span>
+          </div>
+          <div class="reward-stars">
+            ${'⭐'.repeat(Math.min(state.rewardedUnits.length, 5))}
+          </div>
+        </div>
+      `;
+      setTimeout(() => launchConfetti(100), 300);
+      setTimeout(() => launchConfetti(80), 800);
+    } else {
+      // 已经发过奖励了
+      emoji = '🏆';
+      message = '满分！你就是学习小天才！🎉（该单元奖励已领取）';
+    }
     state.perfectScores++;
     state.save();
   } else if (pct >= 80) {
     emoji = '🌟';
-    message = '太棒了！学得很扎实！继续保持！';
+    message = '太棒了！学得很扎实！继续加油冲击满分拿奖励哦！';
   } else if (pct >= 60) {
     emoji = '👍';
-    message = '不错哦！再复习一下就更好了！';
+    message = '不错哦！再复习一下冲击满分就能拿奖励！';
   } else {
     emoji = '💪';
-    message = '加油！多练习几次一定能掌握！';
+    message = '加油！多练习几次，拿到满分就能领奖啦！';
   }
 
   if (pct >= 80) launchConfetti(60);
@@ -574,6 +634,7 @@ function showResult() {
       <span class="result-emoji">${emoji}</span>
       <div class="result-score">${quizScore} / ${total}</div>
       <div class="result-message">${message}</div>
+      ${extraHTML}
       <div class="result-details">
         <div class="result-stat">
           <div class="stat-value">${pct}%</div>
@@ -588,18 +649,60 @@ function showResult() {
           <div class="stat-label">总星星数</div>
         </div>
         <div class="result-stat">
-          <div class="stat-value">${state.achievementsUnlocked.length}</div>
-          <div class="stat-label">成就已解锁</div>
+          <div class="stat-value">${state.rewardedUnits.length}</div>
+          <div class="stat-label">已获奖单元</div>
         </div>
       </div>
       <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
-        <button class="btn btn-primary" onclick="startQuiz()">🔄 重新测验</button>
+        ${!isPerfect ? `
+          <button class="btn btn-gold btn-lg" onclick="startQuiz()" style="font-size:18px;padding:14px 32px;">
+            🔄 重新挑战（冲击满分拿💰）
+          </button>
+        ` : `
+          <button class="btn btn-primary" onclick="startQuiz()">🔄 重新测验</button>
+        `}
         <button class="btn btn-outline" onclick="navigateToSubject('${currentSubject}')">📚 返回单元</button>
         <button class="btn btn-outline" onclick="showAnswerReview()">📖 查看解析</button>
         <button class="btn btn-pink" onclick="goHome()">🏠 首页</button>
       </div>
     </div>
   `;
+}
+
+// ======== 奖励音效 ========
+function playRewardSound() {
+  try {
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    // 欢快的上升音阶 + 金币声
+    const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+    notes.forEach((freq, i) => {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime + i * 0.15);
+      gain.gain.setValueAtTime(0.3, audioCtx.currentTime + i * 0.15);
+      gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + i * 0.15 + 0.3);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(audioCtx.currentTime + i * 0.15);
+      osc.stop(audioCtx.currentTime + i * 0.15 + 0.3);
+    });
+    // 模拟金币叮当声（高频短音）
+    [1200, 1400, 1600, 1800].forEach((freq, i) => {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime + 0.6 + i * 0.08);
+      gain.gain.setValueAtTime(0.2, audioCtx.currentTime + 0.6 + i * 0.08);
+      gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.6 + i * 0.08 + 0.15);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(audioCtx.currentTime + 0.6 + i * 0.08);
+      osc.stop(audioCtx.currentTime + 0.6 + i * 0.08 + 0.15);
+    });
+  } catch (e) {
+    // 静默处理不支持的情况
+  }
 }
 
 // ======== 彩蛋系统 ========
