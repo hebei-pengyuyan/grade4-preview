@@ -582,7 +582,7 @@ function showResult() {
       const rewardAmount = state.getRewardAmount();
       state.markUnitRewarded(currentUnit);
       emoji = '💰';
-      message = `🎉 满分通关！恭喜获得奖励！';
+      message = '🎉 满分通关！恭喜获得奖励！';
 
       // 播放赚钱音效
       playRewardSound();
@@ -705,9 +705,29 @@ function playRewardSound() {
   }
 }
 
-// ======== 彩蛋系统 ========
+// ======== 彩蛋系统（带去重） ========
+let recentEggs = [];   // 记录最近展示过的彩蛋索引，避免重复
+let recentJokes = [];  // 记录最近展示过的笑话索引，避免重复
+const MAX_RECENT_EGGS = 8;   // 彩蛋去重窗口（8/47 ≈ 避免17%的内容在最近出现）
+const MAX_RECENT_JOKES = 5;  // 笑话去重窗口（5/23 ≈ 避免22%的内容在最近出现）
+
+function pickRandomAvoidRecent(arr, recentArr, maxRecent) {
+  // 从数组中随机选一个，避开最近出现过的
+  const available = arr.map((_, i) => i).filter(i => !recentArr.includes(i));
+  if (available.length === 0) {
+    // 全部都是最近出现过的，清空记录重新开始
+    recentArr.length = 0;
+    return Math.floor(Math.random() * arr.length);
+  }
+  const idx = available[Math.floor(Math.random() * available.length)];
+  recentArr.push(idx);
+  if (recentArr.length > maxRecent) recentArr.shift();
+  return idx;
+}
+
 function showRandomEasterEgg() {
-  const egg = EASTER_EGGS[Math.floor(Math.random() * EASTER_EGGS.length)];
+  const idx = pickRandomAvoidRecent(EASTER_EGGS, recentEggs, MAX_RECENT_EGGS);
+  const egg = EASTER_EGGS[idx];
   state.easterEggsFound++;
   state.save();
 
@@ -720,7 +740,8 @@ function showRandomEasterEgg() {
 }
 
 function showMiniEasterEgg() {
-  const egg = EASTER_EGGS[Math.floor(Math.random() * EASTER_EGGS.length)];
+  const idx = pickRandomAvoidRecent(EASTER_EGGS, recentEggs, MAX_RECENT_EGGS);
+  const egg = EASTER_EGGS[idx];
   showModal(
     egg.emoji,
     '🎉 答对彩蛋！',
@@ -730,7 +751,8 @@ function showMiniEasterEgg() {
 }
 
 function showJoke() {
-  const joke = JOKES[Math.floor(Math.random() * JOKES.length)];
+  const idx = pickRandomAvoidRecent(JOKES, recentJokes, MAX_RECENT_JOKES);
+  const joke = JOKES[idx];
   showModal('😂', '轻松一下～', joke, '哈哈哈😂');
 }
 
