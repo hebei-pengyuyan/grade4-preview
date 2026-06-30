@@ -448,6 +448,9 @@ function renderQuestion() {
   const q = questions[currentQuestionIndex];
   const labels = ['A', 'B', 'C', 'D'];
 
+  // 先锁定，防止上一题的点击事件触发新题
+  isAnswering = true;
+
   // 进度条
   const pct = ((currentQuestionIndex) / total * 100);
   $('#quiz-progress-fill').style.width = `${pct}%`;
@@ -459,7 +462,7 @@ function renderQuestion() {
       <div class="question-text">${q.question}</div>
       <div class="options-grid">
         ${q.options.map((opt, i) => `
-          <button class="option-btn" onclick="selectOption(this, ${i}, ${q.answer})" data-index="${i}">
+          <button class="option-btn" onclick="selectOption(this, ${i}, ${q.answer})" data-index="${i}" data-ready="false">
             <span class="option-label">${labels[i]}</span>
             <span>${opt}</span>
           </button>
@@ -481,11 +484,17 @@ function renderQuestion() {
   }).join('');
   $('#question-progress-map').innerHTML = progressHTML;
 
-  isAnswering = false;
+  // 延迟解锁：防止移动端上一题的手指残留事件误触新选项
+  setTimeout(() => {
+    isAnswering = false;
+    $$('#question-area .option-btn').forEach(b => b.setAttribute('data-ready', 'true'));
+  }, 300);
 }
 
 function selectOption(el, selected, correct) {
   if (isAnswering) return;
+  // 按钮未就绪时不允许点击（防止上一题残留事件）
+  if (el.getAttribute('data-ready') !== 'true') return;
   isAnswering = true;
 
   const allOptions = $$('.option-btn');
@@ -644,15 +653,38 @@ function showResult() {
     </div>
   `;
 
-  // ======== 首次满分 → 弹出独立奖励弹窗（醒目！） ========
+  // ======== 延迟弹窗调度：避开成就弹窗 ========
+  // 成就弹窗在 saveQuizResult 时已经排期（500ms），
+  // 奖励弹窗要在成就之后（1000ms）才显示，避免被覆盖
   if (shouldReward) {
+    // 用更长的延迟确保不被成就弹窗覆盖
     setTimeout(() => {
-      showRewardModal(rewardAmount);
-      playRewardSound();
-      launchConfetti(100);
-      setTimeout(() => launchConfetti(80), 500);
-    }, 600);
+      // 关闭可能正在显示的成就弹窗
+      $('#modal-overlay').classList.remove('show');
+      // 等一小段再显示奖励
+      setTimeout(() => {
+        showRewardModal(rewardAmount);
+        playRewardSound();
+        launchConfetti(100);
+        setTimeout(() => launchConfetti(80), 500);
+      }, 100);
+    }, 1000);
   }
+
+  // ======== 单元完成后弹趣味小知识 ========
+  setTimeout(() => {
+    // 只在不弹奖励时才弹小知识（避免弹窗打架）
+    if (!shouldReward) {
+      const idx = pickRandomAvoidRecent(EASTER_EGGS, recentEggs, MAX_RECENT_EGGS);
+      const egg = EASTER_EGGS[idx];
+      showModal(
+        egg.emoji,
+        '🎉 单元完成！' + egg.title,
+        egg.text + '<br><br><small style="color:var(--text-light);">学完一个单元啦，真棒！继续加油～</small>',
+        '知道啦！👌'
+      );
+    }
+  }, shouldReward ? 2500 : 800);
 }
 
 // ======== 奖励独立弹窗 ========
